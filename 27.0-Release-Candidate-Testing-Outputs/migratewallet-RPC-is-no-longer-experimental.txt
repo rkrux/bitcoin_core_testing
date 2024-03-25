@@ -1,0 +1,526 @@
+➜  rctesting datadir-cleanup
+➜  rctesting c
+➜  rctesting {
+echo "regtest=1"
+echo "deprecatedrpc=create_bdb"
+} > $DATA_DIR_27/bitcoin.conf
+➜  rctesting cat $DATA_DIR_27/bitcoin.conf
+regtest=1
+deprecatedrpc=create_bdb
+➜  rctesting bcli -named createwallet wallet_name=legacy_wallet descriptors=false
+error: timeout on transient error: Could not connect to the server 127.0.0.1:18443
+
+Make sure the bitcoind server is running and that you are connecting to the correct RPC port.
+➜  rctesting bitcoind-test -daemon
+Bitcoin Core starting
+➜  rctesting bcli -named createwallet wallet_name=legacy_wallet descriptors=false
+{
+  "name": "legacy_wallet",
+  "warnings": [
+    "Wallet created successfully. The legacy wallet type is being deprecated and support for creating and opening legacy wallets will be removed in the future."
+  ]
+}
+➜  rctesting alias wallet="bcli -rpcwallet=legacy_wallet"
+➜  rctesting bcli -named createwallet wallet_name=helper_wallet descriptors=false
+
+{
+  "name": "helper_wallet",
+  "warnings": [
+    "Wallet created successfully. The legacy wallet type is being deprecated and support for creating and opening legacy wallets will be removed in the future."
+  ]
+}
+➜  rctesting alias helper="bcli -rpcwallet=helper_wallet"
+➜  rctesting alias wallet
+wallet='bcli -rpcwallet=legacy_wallet'
+➜  rctesting legacy_receive=$(wallet getnewaddress "my-P2PKH" legacy)
+➜  rctesting echo $legacy_receive
+mn7KX7ALLf3gewWgaa1d4wiSK4Se1TtHNN
+➜  rctesting bcli generatetoaddress 1 "$legacy_receive"
+[
+  "2c6120fa4de1b0fa45b2a876fd9da01b9122abd713388dff74c65f9eff39cf9c"
+]
+➜  rctesting p2sh_segwit_receive=$(wallet getnewaddress "my-P2SH(P2WPKH)" p2sh-segwit)
+
+➜  rctesting echo $p2sh_segwit_receive
+2MzJ948qcAJnrRwgGFh9YEHgvXTtXAqrDfv
+➜  rctesting bcli generatetoaddress 1 "$p2sh_segwit_receive"
+
+[
+  "1f22ac4226fd38bc18134e440249235d9f3ba20bd6c6324dc6543d642a3e0857"
+]
+➜  rctesting bech32_receive=$(wallet getnewaddress "my-P2WPKH" bech32)
+
+➜  rctesting echo $bech32_receive
+bcrt1q6xwj8chkjalnajfhcdpk0thyam05kc9a2udhuq
+➜  rctesting bcli generatetoaddress 1 "$bech32_receive"
+
+[
+  "6f35384323dc8454d45ed394e902f0d3e67bb0cf10c618794a19d212d4eb8396"
+]
+➜  rctesting alias helper
+helper='bcli -rpcwallet=helper_wallet'
+➜  rctesting helper -generate 100
+
+{
+  "address": "bcrt1qv7h4c0a4j50vewcdht06al7e6lpwwndpvfghqn",
+  "blocks": [
+    "2d8725b3726ac73ca0f150f07615ad5c1fe77188d1a2a9d8d92d3f5e2fda95e4",
+    "21d58e34a3d4fbf2a1820304547438e4677e222dec77e35f52d1d310bc7f8359",
+    "57f6afccc0bd9562206fcc329d42653bcd3ec31bc9b3a85ab29277d196cd1bd9",
+    "2528eef4a898675f73fc019fc2b52958966ff0b95f0d03870a2148f56d99ed7e",
+    "5a930a6e8d88cea67ec6d251419f8989b54dd0afb1f7b8d9295fb2dcfaab078c",
+    "3891001b3ec9548032237a003de3b152f49e877712bb2584cb7d19bb4c076651",
+    "741c56668897ecf1d92f0659ed11cc90d16d27b265e76f4940c547b08f408d6f",
+    "2a6dba67abbf570f7e445f26d1e4622c64ace0d53865bc3484b568403feb143a",
+    "396b0245227df594a9aba6477389abd043d6fe4a11abc1b9114cc5fdd79bc82c",
+    "4ec36b8c74e4a447db71809e9ff2eaaa9adf0fd42b92e66b3068714b3794c04f",
+    "7ae77a178c4beeb6b53c4a9434bb67b108bde4ca96fcc1a6d52876a654bde4ad",
+    "253f10c5d46abe3f1933e3e8e97a50545ea82b525b73583aedea412df1e32475",
+    "234da83b589283c2d77a3f255699e2ed7228a98c907a469b9421a29d9e3d33cb",
+    "7c0e36252e831255418a2242dae630be17ac78ac7920e3651781ef122cb27ea9",
+    "651dffe7237ceeb476b1be29e979036bfd554452c47a6e1624fedbad807748d6",
+    "01d90ef826b25f6dc314b223cbc6fdedde8ce90d165d5ac75747d8347251ac79",
+    "5e89862377866aae2be94777b0d0f00742262117296006e9fc5387f004f2dda7",
+    "2d50b6076baa9423c11f5cb6e255652ec60b329f44f2f048771ec0c2b8170c40",
+    "3e61089839d2d2a7791e8fcee7bc0006b742382d3c658767b05ec02b4cc823db",
+    "501e31282cd42859bb48fbc2e3502285c1206f345b967a26c40f27a4aa494cf4",
+    "7660ce5e080ece493ab51df4e7eba46582238abe0c3459d56d4cce1625886872",
+    "1f3fdf237d2186df18c5cfe61d0f24c1ba6a252ff45fe3fa63ce417533e95dba",
+    "0181845622a2e27c6b80bc773e2663d43e690b736532a9f1d1e7292447d4db8e",
+    "1b1391273126ea11f37aa5891efe415aa52dc18e296fcf88e467e01c4a3edded",
+    "7383f8bd9477346bdf711ca243092e7ec76c894e7b1dfcb0e51754634457e0c6",
+    "383b022e2faea2eb73c28c2c3855b70ae424f01b4807e2c86c3c521d4c534230",
+    "295c4a752d5755fa924fe322b0236e0221a69b17a6ad49e192e25a01acb1a974",
+    "4542e8c655996d296162255e856b116a5fccf26e103ced5d55065f70a45a3b78",
+    "602f4222cb0d077421c6fa8bdc1a508c3c5a0324538f5cf05f97e354b17ee21d",
+    "21ac1f5052002575adecc6a7261bfc1c8e55b6bc27970a2ff4b9174a9cb84792",
+    "1764a6b6ac2aa98fa716c5b0975be07d71dfe903266bc149c3fc41a4b4d5e1b2",
+    "12ee5429cf965cb442e59ae403fdb6362c8c2068e95592fb0db1d6207048906e",
+    "0bbc48bcf1318c2a301c6cd3ad88715f588b7fd034576adbee50844cf91bb640",
+    "3e3ad0b12656ca8d8851b89fbe76d1aec4490dd8951c3bbc8cfcf491c6902d37",
+    "3cab722960e8eceea6932611c5a80ab260d4120f2409c68ab550da5e55431275",
+    "149c72f33c3649147d4c8b6be637dda1c2e4567e33ce74e2267a4e09adfba492",
+    "4d1c25f09d76a5332bf67fb346fc3665ae712017dc75470c8e94f546d4979fac",
+    "6e7d32f9142b5c6f4bdc7eaa9549d4076719b714661632db237bbb47f7e2d0eb",
+    "2512c40fb821b1c436617efb90bf4871889de211e285baf9e38181b6bb6f9ab4",
+    "5885dfb53f9d329b9c95866f3ea6f36b1c435ce3267d328ff37e06a110b289c2",
+    "79da6f3f65cd5acc1da0f13fd4e533143ff3f64d815db618734aa1072b96ff1b",
+    "4f12f53aa07fe06d36c3f43bd7c0cc2704d2000a1e3e77774b7b7ed85f308a4b",
+    "07756fd25eef5824c023c8343644e022f88680c98c8af75585a49afc33a41c75",
+    "52f8fa559c1cf3fc1496c7e71318519762b799f44edb11aeb4f5df37c9869542",
+    "14a99fa28c3828df03f021c0d33cdea20c629b16c5a5017e52484cd1b667550a",
+    "00138314cdc68ca0f85c845ac5a72a23e73446c01b79929a57440151d4adc3b2",
+    "18047cc24792a628da6f1e53116a828ce3dd96b1ff268a9915e93d095e674840",
+    "4b1b44e592857fd0ee731ddff72ee4bc180830b028f50a98c772377fb14300ae",
+    "06736bec159d8205930698693e89d5400aafcfe8bc0a2e106815afb2e9464f4d",
+    "2edc7a1ac1d55fee65b742a43decfcc4b3cec8a8b16ae61ef349105b79c77c61",
+    "2747dbd332fff2b93952d0fde481c34fb213ea8e7aaf5b9a97e77ddc1f5be246",
+    "701e2ace3c5d172ac103e86360e7877b957f3c7f34fcb355bdce5c9d7e157763",
+    "5ffeb0e71b83f40683397eddd67fb1c4cb89b6b175f70d67001882d0049aedd4",
+    "2936ea427d945c44c9997ad9078fce2d4c32e50617372675ffa427f4847c3dfd",
+    "438ac6001b6541f4189835cd0308729af4bc7db22212254951ad63fbb0fba589",
+    "5339f615a36da8dacc3bf90738a2bd974d6e1bc2f3d9960a10e1ffcf1f5a1884",
+    "071161f4259ec9a244b9a949b51488d39ce28578062dfd322cb5622816519196",
+    "3546e781418fd09d43518c74e0a630549fe53877d307cd049ed3f1ee74b79214",
+    "66d8202d90749e0421e4978a727d9e61cb60bb755f43058758268ffc90aa9d74",
+    "7e31d599ea1a0ca48cc4a4ab7facd7b320833578c47fd2de5b32ac58eec7d902",
+    "7e492101b2d95e5fb13d9f39f117a9d3d7a7a65c7b88f3b14cdae5a5545bd33e",
+    "11acdae542bbc340a734369f90ed13ba30fa8c0ad8c8f24533d72cb50587d0af",
+    "784fe533b800768e53a519da3501bd0d267aa1e6c58690b6cf365bdf6e4ea6b0",
+    "7791dc196f70b52c650802d93eb143be471265c9434dd2efb557fa7e3aae2003",
+    "2ea0e0dcffb6282d91d03de0d177c2f6205c67bb0f0c7c9f999bc3c3e33c8ac1",
+    "59348159b6ed0f7e7afd1c414be6aedd4e174e32fd1a49f13a70be8c03187a78",
+    "4329267752bb01ec1cf6e3b791dcc8e371eaef7f6f2d16bf80db67fbba70988e",
+    "7221fd091f57eeb09cd0737325599779606aaa24b30158ae4dd39a9a5bbb4ef0",
+    "1fdcfae7e393be4dbb85e955c064389eebcc17b745eb8a3c3f838d48fd5b7e43",
+    "639af4c383ec91e2f32b11a14abd25d201aab7feae53145a5aab6f106473218c",
+    "56176a6e4dffd6a6ad49822ad1d24ccc8cef9e9a685a858bb25638af053f8167",
+    "2befb17e9925d1c4f3ec8e666105c4a8141ede817b76b386d6a3c62251744e51",
+    "76953ac5f9441ad489569894cfa5f115b2673b39865d068fd679375c2626ec93",
+    "26cf76f75f496150b1eeb064245b4c9ec9acb5fc53a39772e8b2986c8f480efc",
+    "1efcdec18dede625314cabcbc1a9c6751b143b07867c25211981721720428103",
+    "19158760bf5162ff118ca1cba7a0e1ef65c1ccd0b8c9217e6bc82336635dfe3b",
+    "3571539c55a30ddd18219a8f482b49b6c4b076b7aa22987a9f8935f448f76a55",
+    "55515066846b6f9d1dcf5a2f50ff6b70da0095bc0965c3f6ffd6461efa9ffb8d",
+    "28f853ef5855027ed21c8059ac95849197939059eef378eebb9f1aa89b247367",
+    "478d0d89740cbb20ec83a1e775e3a45f23f3d233047b2ca36af9a00b0edbd8cf",
+    "543aae4f761c88c54c66a28f22208f3afab717e99703ecdf483c6899f1ada4a5",
+    "59b192818aa00fb8e7cd0b758df8da736f15eb4af001316ed65a29e89175d0ae",
+    "5f889daaf18971759702363ff317b677aeb87519e8b236fd290710ecd5bc94ff",
+    "1891f41517eae32dd066e33f63cd749900c9bd70de70f197ea252caec46e4208",
+    "1ffc9f76694ded9b1e916488af2a82e29a45f3a372c65b8d1b0412d163dd5932",
+    "0e07657e1c92e6a4a72686afd347498851bd1f3bb98748c170d24f3976af97f6",
+    "597beb0a2ddef0f5f45c9adc77219d5768e0775bb061777886bcc9b5500678c0",
+    "16d03624f18ab4106703ea8f2162409d986660adcfcbe5513c642503e1f7609b",
+    "08d8041d36aa1dbd00671e5f5aabc7bfba24f3a4b7907b2c2ad3e76f2e428de1",
+    "7297836aacd40181a066e11eaf659164480d2a5aec91d937bd9b449a3d2e968e",
+    "41752d0cb6e67b84fdd9a027ddafcdd670c279cf7ee652d3180d4455f7b9f92d",
+    "73ef30cede9815a017b3226a696fa09bdd5a1aa4d9f5257b6d5cbb40bb257a0e",
+    "4a0f85ae48e4090a0351078d9c6a755f2f19f18776decfc5e19e3f206fd40574",
+    "31ca2e1d85adf9fdd3fa8c8768b9f3fd3430ede27034ee28fd5705a2e14dd0b2",
+    "7aa8b167a8bbf901a0bca3f49ec33881dfea6ddc979a15f8d864063fdfc86d6d",
+    "57ccf99a113dd42a24f89cd5438f08eb1ea5f8bdd3cde8e65ba671dc5957fa29",
+    "5f7e1c85b369d5b9c48e9778f18838aebc693513f69e371a3e3b6f1fcfeeff41",
+    "15640007519c667278363f51da2d8ba4b551c3d52f9db3b91c79b7dad217f83b",
+    "007cb56822c4af4486c3ac8eb001e14f3428bf310b9fc28bf7a02571f3de3002",
+    "5f7ed9c408fbec18dcfbfdb36152b3e67bcc79f7c1023896a86a853c6c5c4665"
+  ]
+}
+➜  rctesting non_hd_address=$(helper getnewaddress)
+
+➜  rctesting echo $non_hd_address
+bcrt1qhhfuz509ftvkg0ww3z26pz9kwrjwwtqu6acvfz
+➜  rctesting non_hd_key=$(helper dumpprivkey $non_hd_address)
+
+➜  rctesting wallet importprivkey $non_hd_key "non-hd"
+
+➜  rctesting wallet -named send outputs="{\"$non_hd_address\": 1}" fee_rate=10
+{
+  "txid": "719fb040f7783b7a15c81dc6378df4d4ad29c3b95ec3e1ea46ba1b819695f4a9",
+  "complete": true
+}
+➜  rctesting watch_address=$(helper getnewaddress)
+
+➜  rctesting wallet importaddress $watch_address "watch_address"
+
+➜  rctesting echo $wallet_address
+
+➜  rctesting echo $watch_address
+bcrt1q2wkmuwp4ufmmkzj0rpza9xanfhcsp82h0qqldg
+➜  rctesting not_my_address=$(helper getnewaddress)
+
+➜  rctesting not_my_pubkey=$(helper getaddressinfo $not_my_address | jq -r ".pubkey")
+
+➜  rctesting echo $not_my_pubkey
+030a3ed613a4b9c1fd847d01346acd5117a411915ff13c8411722db3b594c6a906
+➜  rctesting my_address=$(wallet getnewaddress)
+
+➜  rctesting multisig_address=$(wallet addmultisigaddress 1 '''["'$my_address'", "'$not_my_pubkey'"]''' "multisig" | jq -r ".address")
+➜  rctesting wallet getaddressinfo $legacy_receive
+
+{
+  "address": "mn7KX7ALLf3gewWgaa1d4wiSK4Se1TtHNN",
+  "scriptPubKey": "76a91448509d7cbe52a096369b8db2566c29ba1829eeb388ac",
+  "ismine": true,
+  "solvable": true,
+  "desc": "pkh([5859908b/0h/0h/0h]036c6901d5969bcaca08c1c685521cafdb186c5919a402bd8713f2e118306e6f9d)#eq37k3x4",
+  "iswatchonly": false,
+  "isscript": false,
+  "iswitness": false,
+  "pubkey": "036c6901d5969bcaca08c1c685521cafdb186c5919a402bd8713f2e118306e6f9d",
+  "iscompressed": true,
+  "ischange": false,
+  "timestamp": 1711365562,
+  "hdkeypath": "m/0'/0'/0'",
+  "hdseedid": "217dd203da992de1f8f0c1d6a285a2b432ff4109",
+  "hdmasterfingerprint": "5859908b",
+  "labels": [
+    "my-P2PKH"
+  ]
+}
+➜  rctesting wallet getaddressinfo $p2sh_segwit_receive
+
+{
+  "address": "2MzJ948qcAJnrRwgGFh9YEHgvXTtXAqrDfv",
+  "scriptPubKey": "a9144d560290c4a5b261e02660ad10c68e350cc2365387",
+  "ismine": true,
+  "solvable": true,
+  "desc": "sh(wpkh([5859908b/0h/0h/1h]03f304ed45364a81bca31075bc1758b58d0573974dc85faa26c2f5b2cedb8ddb84))#f4tgmuhh",
+  "iswatchonly": false,
+  "isscript": true,
+  "iswitness": false,
+  "script": "witness_v0_keyhash",
+  "hex": "00142fd8bccceb5350ed05a239ffbe08e52d5363cae9",
+  "pubkey": "03f304ed45364a81bca31075bc1758b58d0573974dc85faa26c2f5b2cedb8ddb84",
+  "embedded": {
+    "isscript": false,
+    "iswitness": true,
+    "witness_version": 0,
+    "witness_program": "2fd8bccceb5350ed05a239ffbe08e52d5363cae9",
+    "pubkey": "03f304ed45364a81bca31075bc1758b58d0573974dc85faa26c2f5b2cedb8ddb84",
+    "address": "bcrt1q9lvten8t2dgw6pdz88lmuz8994fk8jhfkmljxy",
+    "scriptPubKey": "00142fd8bccceb5350ed05a239ffbe08e52d5363cae9"
+  },
+  "ischange": false,
+  "timestamp": 1711365562,
+  "hdkeypath": "m/0'/0'/1'",
+  "hdseedid": "217dd203da992de1f8f0c1d6a285a2b432ff4109",
+  "hdmasterfingerprint": "5859908b",
+  "labels": [
+    "my-P2SH(P2WPKH)"
+  ]
+}
+➜  rctesting wallet getaddressinfo $bech32_receive
+
+{
+  "address": "bcrt1q6xwj8chkjalnajfhcdpk0thyam05kc9a2udhuq",
+  "scriptPubKey": "0014d19d23e2f6977f3ec937c34367aee4eedf4b60bd",
+  "ismine": true,
+  "solvable": true,
+  "desc": "wpkh([5859908b/0h/0h/2h]02aa01b70fbb82c4595fed787da8b72d76fe91f85e686cbdc642cedcb0ecc77298)#dlqxvyww",
+  "iswatchonly": false,
+  "isscript": false,
+  "iswitness": true,
+  "witness_version": 0,
+  "witness_program": "d19d23e2f6977f3ec937c34367aee4eedf4b60bd",
+  "pubkey": "02aa01b70fbb82c4595fed787da8b72d76fe91f85e686cbdc642cedcb0ecc77298",
+  "ischange": false,
+  "timestamp": 1711365562,
+  "hdkeypath": "m/0'/0'/2'",
+  "hdseedid": "217dd203da992de1f8f0c1d6a285a2b432ff4109",
+  "hdmasterfingerprint": "5859908b",
+  "labels": [
+    "my-P2WPKH"
+  ]
+}
+➜  rctesting wallet getaddressinfo $non_hd_address
+
+{
+  "address": "bcrt1qhhfuz509ftvkg0ww3z26pz9kwrjwwtqu6acvfz",
+  "scriptPubKey": "0014bdd3c151e54ad9643dce8895a088b670e4e72c1c",
+  "ismine": true,
+  "solvable": true,
+  "desc": "wpkh([bdd3c151]02ddb56d1f5cacfd5edf821aaa74ce935c11efc4e40458b71cee1dca8e3bfc69ab)#70nrxdyt",
+  "iswatchonly": false,
+  "isscript": false,
+  "iswitness": true,
+  "witness_version": 0,
+  "witness_program": "bdd3c151e54ad9643dce8895a088b670e4e72c1c",
+  "pubkey": "02ddb56d1f5cacfd5edf821aaa74ce935c11efc4e40458b71cee1dca8e3bfc69ab",
+  "ischange": false,
+  "timestamp": 1,
+  "labels": [
+    "non-hd"
+  ]
+}
+➜  rctesting wallet getaddressinfo $watch_address
+
+{
+  "address": "bcrt1q2wkmuwp4ufmmkzj0rpza9xanfhcsp82h0qqldg",
+  "scriptPubKey": "001453adbe3835e277bb0a4f1845d29bb34df1009d57",
+  "ismine": false,
+  "solvable": false,
+  "iswatchonly": true,
+  "isscript": false,
+  "iswitness": true,
+  "witness_version": 0,
+  "witness_program": "53adbe3835e277bb0a4f1845d29bb34df1009d57",
+  "ischange": false,
+  "timestamp": 1,
+  "labels": [
+    "watch_address"
+  ]
+}
+➜  rctesting wallet getaddressinfo $multisig_address
+
+{
+  "address": "bcrt1qx5wurueqg8nxgy8h3p2h3h7xlug6ewjcpdre4nkca22uyp93u64qksmc9r",
+  "scriptPubKey": "0020351dc1f32041e66410f7885578dfc6ff11acba580b479aced8ea95c204b1e6aa",
+  "ismine": false,
+  "solvable": true,
+  "desc": "wsh(multi(1,[5859908b/0h/0h/3h]03da88450ce2c5861e1ecfa8652076d1e1a16f11caebd596a7bdf822d6e51bf65d,030a3ed613a4b9c1fd847d01346acd5117a411915ff13c8411722db3b594c6a906))#ugzwnkr8",
+  "iswatchonly": false,
+  "isscript": true,
+  "iswitness": true,
+  "witness_version": 0,
+  "witness_program": "351dc1f32041e66410f7885578dfc6ff11acba580b479aced8ea95c204b1e6aa",
+  "script": "multisig",
+  "hex": "512103da88450ce2c5861e1ecfa8652076d1e1a16f11caebd596a7bdf822d6e51bf65d21030a3ed613a4b9c1fd847d01346acd5117a411915ff13c8411722db3b594c6a90652ae",
+  "sigsrequired": 1,
+  "pubkeys": [
+    "03da88450ce2c5861e1ecfa8652076d1e1a16f11caebd596a7bdf822d6e51bf65d",
+    "030a3ed613a4b9c1fd847d01346acd5117a411915ff13c8411722db3b594c6a906"
+  ],
+  "ischange": false,
+  "labels": [
+    "multisig"
+  ]
+}
+➜  rctesting bcli migratewallet legacy_wallet
+{
+  "wallet_name": "legacy_wallet",
+  "watchonly_name": "legacy_wallet_watchonly",
+  "solvables_name": "legacy_wallet_solvables",
+  "backup_path": "/tmp/27-rc-test/regtest/wallets/legacy_wallet/legacy_wallet-1711365969.legacy.bak"
+}
+➜  rctesting bcli stop
+bitcoind-test -daemon
+Bitcoin Core stopping
+Error: Cannot obtain a lock on data directory /tmp/27-rc-test/regtest. Bitcoin Core is probably already running.
+➜  rctesting bitcoind-test -daemon
+
+Bitcoin Core starting
+➜  rctesting bcli loadwallet legacy_wallet
+{
+  "name": "legacy_wallet"
+}
+➜  rctesting bcli listwallets
+
+[
+  "legacy_wallet_watchonly",
+  "legacy_wallet_solvables",
+  "legacy_wallet"
+]
+➜  rctesting wallet listdescriptors
+
+{
+  "wallet_name": "legacy_wallet",
+  "descriptors": [
+    {
+      "desc": "combo([0941ff32]03a1676a23c9bc047b22c69d78ee5451b2b4f457281bc799ab5fed4a22a495cb7b)#zvynanck",
+      "timestamp": 1711365562,
+      "active": false
+    },
+    {
+      "desc": "combo([bdd3c151]02ddb56d1f5cacfd5edf821aaa74ce935c11efc4e40458b71cee1dca8e3bfc69ab)#92n40845",
+      "timestamp": 1,
+      "active": false
+    },
+    {
+      "desc": "combo(tpubD6NzVbkrYhZ4YFNhVcNwQNtH79X48bnQEdD5eZy86bYzfwUJo8bnrzqafRRof2ktK43s2SpjBozrm5wuZZgWxrGiAFYEKS53RZ7cGiyLvQc/0h/0h/*h)#4a3vw4tn",
+      "timestamp": 0,
+      "active": false,
+      "range": [
+        0,
+        1003
+      ],
+      "next": 3,
+      "next_index": 3
+    },
+    {
+      "desc": "combo(tpubD6NzVbkrYhZ4YFNhVcNwQNtH79X48bnQEdD5eZy86bYzfwUJo8bnrzqafRRof2ktK43s2SpjBozrm5wuZZgWxrGiAFYEKS53RZ7cGiyLvQc/0h/1h/*h)#9mma7972",
+      "timestamp": 0,
+      "active": false,
+      "range": [
+        0,
+        1000
+      ],
+      "next": 1,
+      "next_index": 1
+    },
+    {
+      "desc": "pkh([5859908b/44h/1h/0h]tpubDDtjBVx5vutooiwDLk3R4TDVgtbZAnssNqDUKvagU9Zqx3k77tX9QTocTNKvZrLGEVsAbneax4ESdqRAYam7AMubjmHrU1CStHDWwk8tYsV/0/*)#t0vlycsk",
+      "timestamp": 1711365973,
+      "active": true,
+      "internal": false,
+      "range": [
+        0,
+        999
+      ],
+      "next": 0,
+      "next_index": 0
+    },
+    {
+      "desc": "pkh([5859908b/44h/1h/0h]tpubDDtjBVx5vutooiwDLk3R4TDVgtbZAnssNqDUKvagU9Zqx3k77tX9QTocTNKvZrLGEVsAbneax4ESdqRAYam7AMubjmHrU1CStHDWwk8tYsV/1/*)#6mf7edqw",
+      "timestamp": 1711365973,
+      "active": true,
+      "internal": true,
+      "range": [
+        0,
+        999
+      ],
+      "next": 0,
+      "next_index": 0
+    },
+    {
+      "desc": "sh(wpkh([5859908b/49h/1h/0h]tpubDCU2uV8DVzDSrRwFtuyGRne4jZP1MNKiJgPYeW5DfX3cDR8QM3bZz3FmpsPHkhVe9r9pYKiWeBxqNPJTmd9WESUqapXbKZodTZGj3K2RzsL/0/*))#t8yfqly8",
+      "timestamp": 1711365973,
+      "active": true,
+      "internal": false,
+      "range": [
+        0,
+        999
+      ],
+      "next": 0,
+      "next_index": 0
+    },
+    {
+      "desc": "sh(wpkh([5859908b/49h/1h/0h]tpubDCU2uV8DVzDSrRwFtuyGRne4jZP1MNKiJgPYeW5DfX3cDR8QM3bZz3FmpsPHkhVe9r9pYKiWeBxqNPJTmd9WESUqapXbKZodTZGj3K2RzsL/1/*))#7x2lcq3c",
+      "timestamp": 1711365974,
+      "active": true,
+      "internal": true,
+      "range": [
+        0,
+        999
+      ],
+      "next": 0,
+      "next_index": 0
+    },
+    {
+      "desc": "tr([5859908b/86h/1h/0h]tpubDC5q5jqzzpXsijzcZVT7c4bXbUXjHPv9x4cvt4sCTp2X9zmyrkPVSp57bx1ByTkfJbmivfNK3Bdthcz8WoJwqywUuxhDTVD7tnm4xUcRL4u/0/*)#se65prnl",
+      "timestamp": 1711365973,
+      "active": true,
+      "internal": false,
+      "range": [
+        0,
+        999
+      ],
+      "next": 0,
+      "next_index": 0
+    },
+    {
+      "desc": "tr([5859908b/86h/1h/0h]tpubDC5q5jqzzpXsijzcZVT7c4bXbUXjHPv9x4cvt4sCTp2X9zmyrkPVSp57bx1ByTkfJbmivfNK3Bdthcz8WoJwqywUuxhDTVD7tnm4xUcRL4u/1/*)#pdl4ukr8",
+      "timestamp": 1711365974,
+      "active": true,
+      "internal": true,
+      "range": [
+        0,
+        999
+      ],
+      "next": 0,
+      "next_index": 0
+    },
+    {
+      "desc": "wpkh([5859908b/84h/1h/0h]tpubDDRZtLg8NckDDvwDod2gTG3oAcQE3ZfXyaamLG9jTvCZSuF1bhMTEVtvVvK94PFap4qm4nXfGvNKYZ9UHzW8TifLtKuRQd988NgyYzbdPu4/0/*)#nt3scw2g",
+      "timestamp": 1711365973,
+      "active": true,
+      "internal": false,
+      "range": [
+        0,
+        999
+      ],
+      "next": 0,
+      "next_index": 0
+    },
+    {
+      "desc": "wpkh([5859908b/84h/1h/0h]tpubDDRZtLg8NckDDvwDod2gTG3oAcQE3ZfXyaamLG9jTvCZSuF1bhMTEVtvVvK94PFap4qm4nXfGvNKYZ9UHzW8TifLtKuRQd988NgyYzbdPu4/1/*)#zl539m6s",
+      "timestamp": 1711365974,
+      "active": true,
+      "internal": true,
+      "range": [
+        0,
+        999
+      ],
+      "next": 0,
+      "next_index": 0
+    }
+  ]
+}
+➜  rctesting wallet getwalletinfo
+
+{
+  "walletname": "legacy_wallet",
+  "walletversion": 169900,
+  "format": "sqlite",
+  "balance": 149.99997810,
+  "unconfirmed_balance": 0.00000000,
+  "immature_balance": 0.00000000,
+  "txcount": 4,
+  "keypoolsize": 4000,
+  "keypoolsize_hd_internal": 4000,
+  "paytxfee": 0.00000000,
+  "private_keys_enabled": true,
+  "avoid_reuse": false,
+  "scanning": false,
+  "descriptors": true,
+  "external_signer": false,
+  "blank": false,
+  "birthtime": 0,
+  "lastprocessedblock": {
+    "hash": "5f7ed9c408fbec18dcfbfdb36152b3e67bcc79f7c1023896a86a853c6c5c4665",
+    "height": 103
+  }
+}
+➜  rctesting bcli stop
+Bitcoin Core stopping
+➜  rctesting

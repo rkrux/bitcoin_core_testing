@@ -1,0 +1,600 @@
+➜  rctesting bitcoind-test-26 -daemon
+zsh: command not found: bitcoind-test-26
+➜  rctesting restart
+➜  rctesting bitcoind-test-26 -daemon
+Bitcoin Core starting
+➜  rctesting alias bitcoind-test-26
+bitcoind-test-26='/Users/aither/projects/rctesting/bitcoin-26.0/bin/bitcoind -datadir=/tmp/26-test'
+➜  rctesting alias bcli26
+bcli26='/Users/aither/projects/rctesting/bitcoin-26.0/bin/bitcoin-cli -datadir=/tmp/26-test'
+➜  rctesting bcli26 createwallet test
+{
+  "name": "test"
+}
+➜  rctesting bcli26 -rpcwallet=test -generate 101
+{
+  "address": "bcrt1q384jjqzp2r2q50adv3h5rxe5yvvdqw876uc8cu",
+  "blocks": [
+    "0fa47d9336fbcc0c9002ef18a6b4ced99ee2b40940d9cfbdff23c37b5426c86e",
+    "722e9d3a5cf53425b5e08b74880f96979afc115f84a37d1e0c29d7f211727d08",
+    "4beb56ccc6cee8821dd205ae87e53903b5a3324db7d9765ca3c2f427f6577e30",
+    "77a41cb1541d64cd55dcb37a72810c4c40d36b6fc45cdc151994a78e3ac9a9b5",
+    "2893069df3d2a2fe2ff5dd11fa045aec273930a5707b2732bb8c17660be441d3",
+    "078cb98a03ee2ad70e3a6f195f6845032c4ec880660ce9abe287511ec1157c92",
+    "59896635fdd645f788c244a0a5fbea21b7975d755e609d2581a3d4fa04d667bc",
+    "097a9afba9d10fc7ffe487d440b6348ed94b98c7fea52ea12cf81e80be433ee4",
+    "0068b6502b696b278d9cdced5d9d0464b78e514f0a6065584a48480c93b57e2e",
+    "7224b0f7e21f811ee53e99511da1419668c4c5f085cfde3b982b847d8e227e96",
+    "509ea172c175aba70f8ec7cd4912ade64ea77b828da8d318256ed1c0118d85eb",
+    "4b6f02b98d062efd7aeb4ce270a8af97c41a3108f16c041df01050d6a089d2d2",
+    "463b9591a2ce398a8e8ea5ee38c57d01effb55787706b53bdd2eac3bf78575a8",
+    "0eaea7ffbd23acc3995c788c689919615a04d50aa41727a704f052d56f58d62d",
+    "3576dda1b983047610f6d7f9223b80d06e1f4d37a320d89c4df2c6673e417d95",
+    "5d769f09c0edc75eadc4ddd335647b6d6f9d30fae271c3ec373c1de5790125aa",
+    "4b18c635e80bf4f3fcb01ad008a8c08fcc34c1e62ed77946150ab1c531c504f9",
+    "550e65672bcef56aecb2cc691f7e5b0ddd4bf688fd3b4bbe9a814dd960b45b17",
+    "67e2862a3f4f57a610944f79d1b1ffaa92b5d80978785e5ad7dd4fd948426aaa",
+    "2e6ea479fe07fd0eb83a28296c8d35ad0382fdea65018b0bf16f3c3e03a1146e",
+    "2e76347b87cd8cafb1ccb7f03d498c3905dea396aafb0434cb4dc38371c2462d",
+    "502a3ef6d3addf3a197f58381ad1eb25fafdcd4e808414f3b13ba7d987b296f7",
+    "0fb8869faf19c448f6d7c5bb3ba7f9cace765d6475e4aee6015775affe6baa50",
+    "77937e4a136c84c214f3e76c8a75b3948d8c5f21a12bd1c821b8b6636ce9c285",
+    "38d7aecee84448a9498f1b83bcfd3e22234b9dfa8b2fa2f1e24658ebad489546",
+    "30830ac36473c917a10e6442a48c8df521b3f1bd33a667b98b6374be6c38390c",
+    "0f304e1d8c67418ba0d3a4c94750b8c168b24ba5b81b0c07c8103b426d81f92e",
+    "6dd82e5416c4798abd708b6eda02928797188c0487cfe45e7a979d9593fa087a",
+    "75ce5209cbf056666a273258fcd28589217ac586feee626b55af8c02270f3a75",
+    "295270641fbbd9b33ae7f0fc2f560f64d852ac7dd47af8b30550321288081d7b",
+    "63be536e5f0ad5ca8111acd140bfa061f63d1614068b315d37661715cab057f4",
+    "65a0c8dd5e8224798b5832ab6dbe13c7af60071db004f64354db82fdadce698b",
+    "373cccf5fbc192bb4da34bb4b3c606b2061f850417246b4eb495fa1c8166f6de",
+    "5d73b394e93083698a09556b07f7856a282ba6a34bcc633c7decf5f2b1f6131f",
+    "054047c7e40c2f2d09c3306d6749509586b803ad5203abac53750e2835de26ed",
+    "393e826c839e8858de51a4c18b7132862890d6130b7c44599b105524037c8523",
+    "02b856c36a83e2bc3b72bbc577e48bb24f9d482297272e98f8c610c48e9be9b8",
+    "034ad4971041d69bc69dc4d96d7acca0fcf4c688f9021c5c8634c375dd74ffba",
+    "0b61789daaf5b693d842df6e5039caff7f1c0611c7352d51cc3226fc5d45fc8a",
+    "0857f75c84c324428927c4d5654f431d5a8bbe5815e9a917616ebf0a3c3db03a",
+    "1f5f06e1174d0963bf19e835092f73de0a632e61f95cfcd352a6a6b3a0b40bb4",
+    "4b27869afb07f724bc623883ca9cb1b4f8a99608a02ff7795cb8f06f6ecceee6",
+    "3452baba4978c6875fac275e68e2322b8eb4763b38cf001f008b0de41f4a003c",
+    "143602be15af848193ec36aeba4f7c1df2a9687c20d2bd9c483317643af30313",
+    "651aee90d5e9d3ee7d5e60ed38646e3695f39d3677cdea3c04072409dda581af",
+    "000a59346af6c8b0a23b251bfc6af168b0889502d0366086e4b8b9894ab422a9",
+    "36673ae0f04fb42d33cdb3ec1264b002fe960ee6a06d94fecaaffbfb84203bf6",
+    "64958ea5a61e69d49617b647cd84fc710fd6dcb17022a03b96c7409659f0f936",
+    "266b224fd7e4e5e0c27d9bdf1ceb7673442aaabe0ea633b3ca49676f842dbbfc",
+    "7e7c47d09e11ff07f023eeb8a6098d8daadfbde6752d8e766f92423cda2ea1c2",
+    "3b3ccd4d0c05efcfdec77f69f8514ecbfc183e14075eda2014ee4777528c6519",
+    "578ca0f08a18e7875505993d3b4b59c58202b8144a644aeac7940872bd68c416",
+    "0546f94f804d1aa44e43c97a1947db9bd57251b9e5cc218c6a1d92bc8bd0314e",
+    "58130e602ec9e55b117be3398c755a9155e795b13dae2e05e8a5f64e691122eb",
+    "18be9705eb3fde7fa2d42cadbf99aabedab209bc14e03442f5df3b6a88d41e30",
+    "70d0237d2306668b00891560e6c63e70024b529389021ff207bfcd0b49e64b6a",
+    "3bb6ae1ba05a74d72219e6af7e98f0e05817782f3dd3a328b6a115335dc75404",
+    "403c8eb176e3a950999337676f0302c5e4a2b2e131564e000340dee2b2aa97a8",
+    "1288cd971f77b1de0c03c9f5f657eefbb3d7080b6556d84c9d39177ca0c34d46",
+    "7600163044f9a6878b88a1f368bf55df3ea2e58b86066f0edefe0c051be0085b",
+    "02ad1c743a60d777a115841ba53fc3fb2a7f4b7b0a9265084addf6b33a1edbe2",
+    "6fb160798868390497d2bfdac8a6fa3b30dce67b09b0be44d9c23102ae045b63",
+    "7280d7baf828cf7196cd5310ad688a155cec7d8013182a20c246a42be107a5be",
+    "25b430b84caa4a19e198a94c6a1e9077b14e04cd425d209d501e7ffa782e7b83",
+    "2be11ea42665b92bcfcf2d9f4b5629aba387c232bff167d930a5db982d607187",
+    "464dad0d888f4f7af65f86b6ac28851ea3a2faa88ea7d93053860dfd4c5c8cfe",
+    "51515e542bdd4e7f7527deb4285b0bb1e566096e9093f1d5053e6719258ddba1",
+    "57aaee642702e3aca370a53185f8d286b1474e4d2ff7f164a5fd12ac0a623772",
+    "325709baa4601d3fd162d3df2e2913058a93e4664795c55c2d35ef3c396d5eb6",
+    "5507616a4acd07f84bc72b1b64cc87b5c2be66cb15f27942fb56ffac003756bd",
+    "7d9d99978b61b8cbf43e3366f18956f9603929ae2fa4229ac3bef3cc7469255b",
+    "4ce232acd4eb886ae3909af9d5ab1db2e516dbebbdfce7b07ddebb9e41d5f734",
+    "0ba48541e92ec6059caf4ffeaa26d00b5eaa7972c0c3167a2229a62e6f300064",
+    "04e099bec3add7e9fb72daa081f5be2e3437b2a3713e08328d5e42ddeccefcbe",
+    "7f1d6281b863aa3e4db84807a8d100ea9c515320ca7a3ca16d1bebb6a410cbd6",
+    "660cad62655feee73ba06259fa1af6799fb27411c85531b5650ca53d4d0078a4",
+    "754396ca8b728bc80918c5f8d4e460b749d4e7d3124c311934fad1d9ee91a49b",
+    "3ac5c2857a6af3d73a83fb1f242d866f290bd5d0f3bf505decde7b488a94041d",
+    "60e45a0042bfe5b77d588c41c65948a23a05f7fa5ec7e862fefdb62bcfad4174",
+    "0d9a0edd3fce30f48bfb78f472c13cba53c4df6590a8923833a1bbf9e6399343",
+    "385421b0a452707d94fe8348d7fd89e7dbc944938144f6e51ea046b59049bfa8",
+    "632b644e293de81e1fe3d60fd50cfedca78cb97d0d2052072474f85d69f04b0f",
+    "7fe917720cc7b8dc401dfa6816c051d885d74f6e14789e662b817f390375d7ae",
+    "40b3a80cf30db825b6b7ae51fb7cc53098dead20f9459844fe3fe38b25bc18a7",
+    "1e40fac20c6cd0b663fceb8177d96e758a2ea45dd27c5a53125c388d24601fa2",
+    "51e1d5ab1706f3c5f5eec58186a636b867ef05eb60238c79a938f8afc4ce87bb",
+    "78e67ff09749a9e0e2fed5d7bd21b3704137de3fc8e2b6895643859282d82385",
+    "1f4e290a83ac5069a4b1f4e999b059c69a9f3920270464ec59c1625d64679f33",
+    "2385a53f54781035982e88eceb3d7032d13e29231686f61656560c2a585ff1b1",
+    "4f962ee2c6fa6461c105817d2fce2375525693e7e8f98bfa42c36571a053015e",
+    "7d1ccaba83f1ea8e24b04dcb419e2be5f869c0faa2c89aa2c2b21bae59c951e4",
+    "50060f09b399fbace077700ae35e2703b30b190285f1a8afe116f1746dd77227",
+    "43d368ab10c9e3828dfadee5f18d9dcdcac2d7ef6361da5a6a928dd375c2a444",
+    "31d2822c8edb99df496d1967176bc8c81433fc43a2a3063ad1e390cfd67d2595",
+    "02e0bf38a00f8ed850633c98126f622453719239674757fdb9a8c55ce2b7d488",
+    "7bc26449355a59c7f66b6c8ea00147aed04526e5222298e273da9db674aaee1a",
+    "3156da4e463dad509f86d08aff77f57f05d5021bc32f65ccad099f84dcfbeaef",
+    "1ac8a68b8fede43c6fb3759bcfe8853611f98b00608847124280d6c9e32e5d5a",
+    "443648ba670badb2c772004e2cd7600438f62a4b2af5481ecc1ab9a512412c5a",
+    "462b4cd87ee8d377cdf39ffcf39039673b83d816655e7e404a2228132a7a8245",
+    "5e99d8aa5a9d2585959041039683c26907a4180bd91ec77db1b792d07650a533"
+  ]
+}
+➜  rctesting export ADDRESS=$(bcli26 -rpcwallet=test getnewaddress)
+➜  rctesting $ADDRESS
+zsh: command not found: bcrt1qcdqwdp928lkpzdttts2eywhuqqm89eyz4pkg6d
+➜  rctesting echho $ADDRESS
+zsh: command not found: echho
+➜  rctesting echo $ADDRESS
+bcrt1qcdqwdp928lkpzdttts2eywhuqqm89eyz4pkg6d
+➜  rctesting bcli26 listreceivedbyaddress
+[
+  {
+    "address": "bcrt1q384jjqzp2r2q50adv3h5rxe5yvvdqw876uc8cu",
+    "amount": 50.00000000,
+    "confirmations": 101,
+    "label": "",
+    "txids": [
+      "15c79fc73067d272b6d00a7f1f3824764c84573fb4a65c19453e7e53fd0c74d5"
+    ]
+  }
+]
+➜  rctesting bcli26 listunspent
+[
+  {
+    "txid": "15c79fc73067d272b6d00a7f1f3824764c84573fb4a65c19453e7e53fd0c74d5",
+    "vout": 0,
+    "address": "bcrt1q384jjqzp2r2q50adv3h5rxe5yvvdqw876uc8cu",
+    "label": "",
+    "scriptPubKey": "001489eb29004150d40a3fad646f419b342318d038fe",
+    "amount": 50.00000000,
+    "confirmations": 101,
+    "spendable": true,
+    "solvable": true,
+    "desc": "wpkh([f6a639f7/84h/1h/0h/0/0]03214bbb42f432f5396d03ef67ebc8de8d5bf8441850d03c7f1e5fe61be210aace)#lnp7r6yk",
+    "parent_descs": [
+      "wpkh(tpubD6NzVbkrYhZ4YLPCvHk4JmMq4aTaUtgmnS2XaG3iBNayzv9CDJ9zJVoDLsz92mebkenhwdpmYpRH6YQzYzaJ2muJAVnuLrt7mWpRzJqsvqv/84h/1h/0h/0/*)#9zmy33de"
+    ],
+    "safe": true
+  }
+]
+➜  rctesting bcli26 -rpcwallet=test -named send outputs="{\"$ADDRESS\": 1}" fee_rate=10
+{
+  "txid": "73232e86bd43924557607e4f166e49da09b15fda185f618ec4e35b510dc97cd5",
+  "complete": true
+}
+➜  rctesting bcli26 listunspent
+[
+]
+➜  rctesting bcli26 listtransactions
+[
+  {
+    "address": "bcrt1q384jjqzp2r2q50adv3h5rxe5yvvdqw876uc8cu",
+    "parent_descs": [
+      "wpkh(tpubD6NzVbkrYhZ4YLPCvHk4JmMq4aTaUtgmnS2XaG3iBNayzv9CDJ9zJVoDLsz92mebkenhwdpmYpRH6YQzYzaJ2muJAVnuLrt7mWpRzJqsvqv/84h/1h/0h/0/*)#9zmy33de"
+    ],
+    "category": "immature",
+    "amount": 50.00000000,
+    "label": "",
+    "vout": 0,
+    "abandoned": false,
+    "confirmations": 8,
+    "generated": true,
+    "blockhash": "31d2822c8edb99df496d1967176bc8c81433fc43a2a3063ad1e390cfd67d2595",
+    "blockheight": 94,
+    "blockindex": 0,
+    "blocktime": 1711193018,
+    "txid": "1e383865383b74a3ea59bc53a9955acaaa16a3e1b03f31611c98820ef012e81c",
+    "wtxid": "ce0346612e4b1b88df2a936647c75e8e3b4b3b8784e3ae2a60f70215422556e7",
+    "walletconflicts": [
+    ],
+    "time": 1711193018,
+    "timereceived": 1711193019,
+    "bip125-replaceable": "no"
+  },
+  {
+    "address": "bcrt1q384jjqzp2r2q50adv3h5rxe5yvvdqw876uc8cu",
+    "parent_descs": [
+      "wpkh(tpubD6NzVbkrYhZ4YLPCvHk4JmMq4aTaUtgmnS2XaG3iBNayzv9CDJ9zJVoDLsz92mebkenhwdpmYpRH6YQzYzaJ2muJAVnuLrt7mWpRzJqsvqv/84h/1h/0h/0/*)#9zmy33de"
+    ],
+    "category": "immature",
+    "amount": 50.00000000,
+    "label": "",
+    "vout": 0,
+    "abandoned": false,
+    "confirmations": 7,
+    "generated": true,
+    "blockhash": "02e0bf38a00f8ed850633c98126f622453719239674757fdb9a8c55ce2b7d488",
+    "blockheight": 95,
+    "blockindex": 0,
+    "blocktime": 1711193018,
+    "txid": "2b4d784d4cd4c9983b46e91d80193b23c7a8931893add6835b21875fc168a038",
+    "wtxid": "a3a1d5cae9e6f9449922e7131795b1d77d71d614f6d74900c528ed5716c6980b",
+    "walletconflicts": [
+    ],
+    "time": 1711193018,
+    "timereceived": 1711193019,
+    "bip125-replaceable": "no"
+  },
+  {
+    "address": "bcrt1q384jjqzp2r2q50adv3h5rxe5yvvdqw876uc8cu",
+    "parent_descs": [
+      "wpkh(tpubD6NzVbkrYhZ4YLPCvHk4JmMq4aTaUtgmnS2XaG3iBNayzv9CDJ9zJVoDLsz92mebkenhwdpmYpRH6YQzYzaJ2muJAVnuLrt7mWpRzJqsvqv/84h/1h/0h/0/*)#9zmy33de"
+    ],
+    "category": "immature",
+    "amount": 50.00000000,
+    "label": "",
+    "vout": 0,
+    "abandoned": false,
+    "confirmations": 6,
+    "generated": true,
+    "blockhash": "7bc26449355a59c7f66b6c8ea00147aed04526e5222298e273da9db674aaee1a",
+    "blockheight": 96,
+    "blockindex": 0,
+    "blocktime": 1711193018,
+    "txid": "bbd127007488c30672b737f7849b865535f08953201051a606485612c27c4b75",
+    "wtxid": "5854e70e1ca0705539480159ee7d9847c4650f1aa583c86067d58accc7ff9df9",
+    "walletconflicts": [
+    ],
+    "time": 1711193018,
+    "timereceived": 1711193019,
+    "bip125-replaceable": "no"
+  },
+  {
+    "address": "bcrt1q384jjqzp2r2q50adv3h5rxe5yvvdqw876uc8cu",
+    "parent_descs": [
+      "wpkh(tpubD6NzVbkrYhZ4YLPCvHk4JmMq4aTaUtgmnS2XaG3iBNayzv9CDJ9zJVoDLsz92mebkenhwdpmYpRH6YQzYzaJ2muJAVnuLrt7mWpRzJqsvqv/84h/1h/0h/0/*)#9zmy33de"
+    ],
+    "category": "immature",
+    "amount": 50.00000000,
+    "label": "",
+    "vout": 0,
+    "abandoned": false,
+    "confirmations": 5,
+    "generated": true,
+    "blockhash": "3156da4e463dad509f86d08aff77f57f05d5021bc32f65ccad099f84dcfbeaef",
+    "blockheight": 97,
+    "blockindex": 0,
+    "blocktime": 1711193018,
+    "txid": "6374fb3e6b146d8342873474f7c16c4e70087ca312efe8c8ea8192a7a3f7929a",
+    "wtxid": "28b60141c97c253e1f3c208a9821421abafce73343add6c9af4191852195d76a",
+    "walletconflicts": [
+    ],
+    "time": 1711193018,
+    "timereceived": 1711193020,
+    "bip125-replaceable": "no"
+  },
+  {
+    "address": "bcrt1q384jjqzp2r2q50adv3h5rxe5yvvdqw876uc8cu",
+    "parent_descs": [
+      "wpkh(tpubD6NzVbkrYhZ4YLPCvHk4JmMq4aTaUtgmnS2XaG3iBNayzv9CDJ9zJVoDLsz92mebkenhwdpmYpRH6YQzYzaJ2muJAVnuLrt7mWpRzJqsvqv/84h/1h/0h/0/*)#9zmy33de"
+    ],
+    "category": "immature",
+    "amount": 50.00000000,
+    "label": "",
+    "vout": 0,
+    "abandoned": false,
+    "confirmations": 4,
+    "generated": true,
+    "blockhash": "1ac8a68b8fede43c6fb3759bcfe8853611f98b00608847124280d6c9e32e5d5a",
+    "blockheight": 98,
+    "blockindex": 0,
+    "blocktime": 1711193020,
+    "txid": "a33b279ad1fd03c0f607924617b9654668650db53f5619c49783bac73416b8d3",
+    "wtxid": "267d58685fcd5368c57998c2c1a26e1b03097019d49db4628c78f9df22051b13",
+    "walletconflicts": [
+    ],
+    "time": 1711193020,
+    "timereceived": 1711193020,
+    "bip125-replaceable": "no"
+  },
+  {
+    "address": "bcrt1q384jjqzp2r2q50adv3h5rxe5yvvdqw876uc8cu",
+    "parent_descs": [
+      "wpkh(tpubD6NzVbkrYhZ4YLPCvHk4JmMq4aTaUtgmnS2XaG3iBNayzv9CDJ9zJVoDLsz92mebkenhwdpmYpRH6YQzYzaJ2muJAVnuLrt7mWpRzJqsvqv/84h/1h/0h/0/*)#9zmy33de"
+    ],
+    "category": "immature",
+    "amount": 50.00000000,
+    "label": "",
+    "vout": 0,
+    "abandoned": false,
+    "confirmations": 3,
+    "generated": true,
+    "blockhash": "443648ba670badb2c772004e2cd7600438f62a4b2af5481ecc1ab9a512412c5a",
+    "blockheight": 99,
+    "blockindex": 0,
+    "blocktime": 1711193020,
+    "txid": "6f40ce496599d625543bf9e90c8c82ab3effc583718137cca0e1f62c567ee0f3",
+    "wtxid": "bf6a1cf6d7eababb02c192bf56bd5df268751b0052ca68a866f958a0f8fe62da",
+    "walletconflicts": [
+    ],
+    "time": 1711193020,
+    "timereceived": 1711193020,
+    "bip125-replaceable": "no"
+  },
+  {
+    "address": "bcrt1q384jjqzp2r2q50adv3h5rxe5yvvdqw876uc8cu",
+    "parent_descs": [
+      "wpkh(tpubD6NzVbkrYhZ4YLPCvHk4JmMq4aTaUtgmnS2XaG3iBNayzv9CDJ9zJVoDLsz92mebkenhwdpmYpRH6YQzYzaJ2muJAVnuLrt7mWpRzJqsvqv/84h/1h/0h/0/*)#9zmy33de"
+    ],
+    "category": "immature",
+    "amount": 50.00000000,
+    "label": "",
+    "vout": 0,
+    "abandoned": false,
+    "confirmations": 2,
+    "generated": true,
+    "blockhash": "462b4cd87ee8d377cdf39ffcf39039673b83d816655e7e404a2228132a7a8245",
+    "blockheight": 100,
+    "blockindex": 0,
+    "blocktime": 1711193020,
+    "txid": "12d9f1aa48cb27a9c4097314fc6236fa0e3262056c90bd0560ca7c3689bf07e6",
+    "wtxid": "c9050504eeadd2631e1a2c835be3e857a02f1293732f1eade35e7b3f72e2574d",
+    "walletconflicts": [
+    ],
+    "time": 1711193020,
+    "timereceived": 1711193020,
+    "bip125-replaceable": "no"
+  },
+  {
+    "address": "bcrt1q384jjqzp2r2q50adv3h5rxe5yvvdqw876uc8cu",
+    "parent_descs": [
+      "wpkh(tpubD6NzVbkrYhZ4YLPCvHk4JmMq4aTaUtgmnS2XaG3iBNayzv9CDJ9zJVoDLsz92mebkenhwdpmYpRH6YQzYzaJ2muJAVnuLrt7mWpRzJqsvqv/84h/1h/0h/0/*)#9zmy33de"
+    ],
+    "category": "immature",
+    "amount": 50.00000000,
+    "label": "",
+    "vout": 0,
+    "abandoned": false,
+    "confirmations": 1,
+    "generated": true,
+    "blockhash": "5e99d8aa5a9d2585959041039683c26907a4180bd91ec77db1b792d07650a533",
+    "blockheight": 101,
+    "blockindex": 0,
+    "blocktime": 1711193020,
+    "txid": "41fb08b9c56d5b043c12948b0e9c9f676b0ffdb8bb148662b26221a3fa436c10",
+    "wtxid": "2aa7748859105843f3af37a6502137cd9715d760d8176d28fc531bbf7a65dd4b",
+    "walletconflicts": [
+    ],
+    "time": 1711193020,
+    "timereceived": 1711193021,
+    "bip125-replaceable": "no"
+  },
+  {
+    "address": "bcrt1qcdqwdp928lkpzdttts2eywhuqqm89eyz4pkg6d",
+    "parent_descs": [
+      "wpkh(tpubD6NzVbkrYhZ4YLPCvHk4JmMq4aTaUtgmnS2XaG3iBNayzv9CDJ9zJVoDLsz92mebkenhwdpmYpRH6YQzYzaJ2muJAVnuLrt7mWpRzJqsvqv/84h/1h/0h/0/*)#9zmy33de"
+    ],
+    "category": "receive",
+    "amount": 1.00000000,
+    "label": "",
+    "vout": 1,
+    "abandoned": false,
+    "confirmations": 0,
+    "trusted": true,
+    "txid": "73232e86bd43924557607e4f166e49da09b15fda185f618ec4e35b510dc97cd5",
+    "wtxid": "4065f34e89817853baa264a0ab4277af4a91ed43c8bf5876abe5ee9b4f1aef88",
+    "walletconflicts": [
+    ],
+    "time": 1711193600,
+    "timereceived": 1711193600,
+    "bip125-replaceable": "yes"
+  },
+  {
+    "address": "bcrt1qcdqwdp928lkpzdttts2eywhuqqm89eyz4pkg6d",
+    "category": "send",
+    "amount": -1.00000000,
+    "label": "",
+    "vout": 1,
+    "fee": -0.00001410,
+    "confirmations": 0,
+    "trusted": true,
+    "txid": "73232e86bd43924557607e4f166e49da09b15fda185f618ec4e35b510dc97cd5",
+    "wtxid": "4065f34e89817853baa264a0ab4277af4a91ed43c8bf5876abe5ee9b4f1aef88",
+    "walletconflicts": [
+    ],
+    "time": 1711193600,
+    "timereceived": 1711193600,
+    "bip125-replaceable": "yes",
+    "abandoned": false
+  }
+]
+➜  rctesting bcli26 -rpcwallet=test -named send outputs="{\"$ADDRESS\": 1}" fee_rate=10
+
+{
+  "txid": "5dc3ba807e7911f4b3c2ed12bb1540a2467917bd70f0e47820fa7c4af02e6814",
+  "complete": true
+}
+➜  rctesting bcli26 gettransaction 73232e86bd43924557607e4f166e49da09b15fda185f618ec4e35b510dc97cd5
+{
+  "amount": 0.00000000,
+  "fee": -0.00001410,
+  "confirmations": 0,
+  "trusted": true,
+  "txid": "73232e86bd43924557607e4f166e49da09b15fda185f618ec4e35b510dc97cd5",
+  "wtxid": "4065f34e89817853baa264a0ab4277af4a91ed43c8bf5876abe5ee9b4f1aef88",
+  "walletconflicts": [
+  ],
+  "time": 1711193600,
+  "timereceived": 1711193600,
+  "bip125-replaceable": "yes",
+  "details": [
+    {
+      "address": "bcrt1qcdqwdp928lkpzdttts2eywhuqqm89eyz4pkg6d",
+      "category": "send",
+      "amount": -1.00000000,
+      "label": "",
+      "vout": 1,
+      "fee": -0.00001410,
+      "abandoned": false
+    },
+    {
+      "address": "bcrt1qcdqwdp928lkpzdttts2eywhuqqm89eyz4pkg6d",
+      "parent_descs": [
+        "wpkh(tpubD6NzVbkrYhZ4YLPCvHk4JmMq4aTaUtgmnS2XaG3iBNayzv9CDJ9zJVoDLsz92mebkenhwdpmYpRH6YQzYzaJ2muJAVnuLrt7mWpRzJqsvqv/84h/1h/0h/0/*)#9zmy33de"
+      ],
+      "category": "receive",
+      "amount": 1.00000000,
+      "label": "",
+      "vout": 1,
+      "abandoned": false
+    }
+  ],
+  "hex": "02000000000101d5740cfd537e3e45195ca6b43f57844c7624381f7f0ad0b672d26730c79fc7150000000000fdffffff027e0b102401000000160014695091285ad33495ec435e221adce5539948f83d00e1f50500000000160014c340e684aa3fec11356b5c15923afc003672e48202473044022012e73bb0ec0174040c40ff0b55d7d4291edbe7f419171a40d9edf5c53e5befbc022077229dd63f473cb5a512ba8d093b95cf05ebe9c983f231335459c05f05715bc6012103214bbb42f432f5396d03ef67ebc8de8d5bf8441850d03c7f1e5fe61be210aace00000000",
+  "lastprocessedblock": {
+    "hash": "5e99d8aa5a9d2585959041039683c26907a4180bd91ec77db1b792d07650a533",
+    "height": 101
+  }
+}
+➜  rctesting bcli26 gettransaction 5dc3ba807e7911f4b3c2ed12bb1540a2467917bd70f0e47820fa7c4af02e6814
+{
+  "amount": 0.00000000,
+  "fee": -0.00001410,
+  "confirmations": 0,
+  "trusted": true,
+  "txid": "5dc3ba807e7911f4b3c2ed12bb1540a2467917bd70f0e47820fa7c4af02e6814",
+  "wtxid": "e619fa4bf76a1b06e8e98f90c5afc6179095461e978b62470a2878d7052c19c3",
+  "walletconflicts": [
+  ],
+  "time": 1711193798,
+  "timereceived": 1711193798,
+  "bip125-replaceable": "yes",
+  "details": [
+    {
+      "address": "bcrt1qcdqwdp928lkpzdttts2eywhuqqm89eyz4pkg6d",
+      "category": "send",
+      "amount": -1.00000000,
+      "label": "",
+      "vout": 1,
+      "fee": -0.00001410,
+      "abandoned": false
+    },
+    {
+      "address": "bcrt1qcdqwdp928lkpzdttts2eywhuqqm89eyz4pkg6d",
+      "parent_descs": [
+        "wpkh(tpubD6NzVbkrYhZ4YLPCvHk4JmMq4aTaUtgmnS2XaG3iBNayzv9CDJ9zJVoDLsz92mebkenhwdpmYpRH6YQzYzaJ2muJAVnuLrt7mWpRzJqsvqv/84h/1h/0h/0/*)#9zmy33de"
+      ],
+      "category": "receive",
+      "amount": 1.00000000,
+      "label": "",
+      "vout": 1,
+      "abandoned": false
+    }
+  ],
+  "hex": "02000000000101d57cc90d515be3c48e615f18da5fb109da496e164f7e6057459243bd862e23730000000000fdffffff02fc241a1e010000001600143b7bf847f238e69aa354bafae206b5d307af6a2300e1f50500000000160014c340e684aa3fec11356b5c15923afc003672e4820247304402204658796cac910eae40a880dd5a5d757ec99e8323251fda6dd3df386e290385560220260d14ffd69847b599f6745608de295760dd9e7ea0b1080a6bb4d2c373e9b5f6012102772b7959bf5d907f5d0c81e3b996bd386abedb244596ab31d0967195b42b8be500000000",
+  "lastprocessedblock": {
+    "hash": "5e99d8aa5a9d2585959041039683c26907a4180bd91ec77db1b792d07650a533",
+    "height": 101
+  }
+}
+➜  rctesting bcli26 stop
+Bitcoin Core stopping
+➜  rctesting mv $DATA_DIR_27/bitcoin.conf $DATA_DIR_27/bitcoin.conf.backup
+➜  rctesting cp -r $DATA_DIR_26/* $DATA_DIR_27/
+➜  rctesting mv $DATA_DIR_27/bitcoin.conf.backup $DATA_DIR_27/bitcoin.conf
+➜  rctesting bitcoind-test -daemon -persistmempoolv1=1
+Bitcoin Core starting
+➜  rctesting bcli getmempoolinfo
+{
+  "loaded": true,
+  "size": 2,
+  "bytes": 282,
+  "usage": 2320,
+  "total_fee": 0.00002820,
+  "maxmempool": 300000000,
+  "mempoolminfee": 0.00001000,
+  "minrelaytxfee": 0.00001000,
+}
+➜  rctesting bcli getrawmempool
+[
+  "73232e86bd43924557607e4f166e49da09b15fda185f618ec4e35b510dc97cd5",
+  "5dc3ba807e7911f4b3c2ed12bb1540a2467917bd70f0e47820fa7c4af02e6814"
+]
+➜  rctesting bcli stop
+Bitcoin Core stopping
+➜  rctesting ls --full-time $DATA_DIR_27/regtest/mempool.dat
+ls: unrecognized option `--full-time'
+usage: ls [-@ABCFGHILOPRSTUWabcdefghiklmnopqrstuvwxy1%,] [--color=when] [-D format] [file ...]
+➜  rctesting ls $DATA_DIR_27/regtest/mempool.dat
+/tmp/27-rc-test/regtest/mempool.dat
+➜  rctesting ls -l $DATA_DIR_27/regtest/mempool.dat
+-rw-------  1 aither  wheel  558 Mar 23 17:28 /tmp/27-rc-test/regtest/mempool.dat
+➜  rctesting hexdump -n8 $DATA_DIR_27/regtest/mempool.dat
+0000000 0001 0000 0000 0000
+0000008
+➜  rctesting man hexdump
+Unknown locale, assuming C
+➜  rctesting
+➜  rctesting man hexdump
+Unknown locale, assuming C
+➜  rctesting
+➜  rctesting man xxd
+➜  rctesting
+➜  rctesting hexdump $DATA_DIR_27/regtest/mempool.dat
+0000000 0001 0000 0000 0000 0002 0000 0000 0000
+0000010 0002 0000 0100 d501 0c74 53fd 3e7e 1945
+0000020 a65c 3fb4 8457 764c 3824 7f1f d00a 72b6
+0000030 67d2 c730 c79f 0015 0000 0000 fffd ffff
+0000040 7e02 100b 0124 0000 1600 1400 5069 2891
+0000050 d35a 9534 43ec 225e dc1a 53e5 4899 3df8
+0000060 e100 05f5 0000 0000 0016 c314 e640 aa84
+0000070 ec3f 3511 5c6b 9215 fc3a 3600 e472 0282
+0000080 3047 0244 1220 3be7 ecb0 7401 0c04 ff40
+0000090 550b d4d7 1e29 e7db 19f4 1a17 d940 f5ed
+00000a0 3ec5 ef5b 02bc 7720 9d22 3fd6 3c47 a5b5
+00000b0 ba12 098d 953b 05cf e9eb 83c9 31f2 5433
+00000c0 c059 055f 5b71 01c6 0321 4b21 42bb 32f4
+00000d0 39f5 036d 67ef c8eb 8dde f85b 1844 d050
+00000e0 7f3c 5f1e 1be6 10e2 ceaa 0000 0000 be00
+00000f0 65fe 0000 0000 0000 0000 0000 0000 0002
+0000100 0000 0100 d501 c97c 510d e35b 8ec4 5f61
+0000110 da18 b15f da09 6e49 4f16 607e 4557 4392
+0000120 86bd 232e 0073 0000 0000 fffd ffff fc02
+0000130 1a24 011e 0000 1600 1400 7b3b 47f8 38f2
+0000140 9ae6 54a3 faba 06e2 d3b5 af07 236a e100
+0000150 05f5 0000 0000 0016 c314 e640 aa84 ec3f
+0000160 3511 5c6b 9215 fc3a 3600 e472 0282 3047
+0000170 0244 4620 7958 ac6c 0e91 40ae 80a8 5add
+0000180 755d c97e 839e 2523 da1f d36d 38df 296e
+0000190 8503 0256 2620 140d d6ff 4798 99b5 74f6
+00001a0 0856 29de 6057 9edd a07e 08b1 6b0a d2b4
+00001b0 73c3 b5e9 01f6 0221 2b77 5979 5dbf 7f90
+00001c0 0c5d e381 96b9 38bd be6a 24db 9645 31ab
+00001d0 96d0 9571 2bb4 e58b 0000 0000 bec7 65fe
+00001e0 0000 0000 0000 0000 0000 0000 0200 6814
+00001f0 f02e 7c4a 20fa e478 70f0 17bd 4679 40a2
+0000200 bb15 ed12 b3c2 11f4 7e79 ba80 5dc3 7cd5
+0000210 0dc9 5b51 c4e3 618e 185f 5fda 09b1 49da
+0000220 166e 7e4f 5760 9245 bd43 2e86 7323
+000022e
+➜  rctesting
+➜  rctesting bitcoind-test -daemon
+Bitcoin Core starting
+➜  rctesting bcli getmempoolinfo
+{
+  "loaded": true,
+  "size": 2,
+  "bytes": 282,
+  "usage": 2320,
+  "total_fee": 0.00002820,
+  "maxmempool": 300000000,
+  "mempoolminfee": 0.00001000,
+  "minrelaytxfee": 0.00001000,
+  "incrementalrelayfee": 0.00001000,
+  "unbroadcastcount": 2,
+  "fullrbf": false
+}
+➜  rctesting bcli getrawmempool
+[
+  "73232e86bd43924557607e4f166e49da09b15fda185f618ec4e35b510dc97cd5",
+  "5dc3ba807e7911f4b3c2ed12bb1540a2467917bd70f0e47820fa7c4af02e6814"
+]
+➜  rctesting bcli savemempool
+{
+  "filename": "/tmp/27-rc-test/regtest/mempool.dat"
+}
+➜  rctesting ls -l $DATA_DIR_27/regtest/mempool.dat
+-rw-------  1 aither  wheel  567 Mar 23 17:31 /tmp/27-rc-test/regtest/mempool.dat
+➜  rctesting hexdump -n8 $DATA_DIR_27/regtest/mempool.dat
+0000000 0002 0000 0000 0000
+0000008
+➜  rctesting bcli stop
+Bitcoin Core stopping

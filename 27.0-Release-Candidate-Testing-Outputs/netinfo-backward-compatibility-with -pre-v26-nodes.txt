@@ -1,0 +1,70 @@
+➜  rctesting echo "regtest=1" > $DATA_DIR_25/bitcoin.conf
+echo "[regtest]" >> $DATA_DIR_25/bitcoin.conf
+echo "rpcallowip=127.0.0.1" >> $DATA_DIR_25/bitcoin.conf
+echo "rpcbind=127.0.0.1:18243" >> $DATA_DIR_25/bitcoin.conf
+echo "rpcport=18243" >> $DATA_DIR_25/bitcoin.conf
+echo "bind=127.0.0.1:18244" >> $DATA_DIR_25/bitcoin.conf
+echo "bind=127.0.0.1:18245=onion" >> $DATA_DIR_25/bitcoin.conf
+➜  rctesting bitcoind-test-25 -daemon
+Bitcoin Core starting
+➜  rctesting echo "regtest=1" > $DATA_DIR_27/bitcoin.conf
+bitcoind-test -daemon
+Bitcoin Core starting
+➜  rctesting bcli addnode 127.0.0.1:18244 add
+➜  rctesting bcli -netinfo 4
+Bitcoin Core client v27.0.0rc1 regtest - server 70016/Satoshi:27.0.0/
+
+<->   type   net  v  mping   ping send recv  txn  blk  hb addrp addrl  age id address         version
+out manual   npr  1      1      1    9    9                              0  1 127.0.0.1:18244 70016/Satoshi:25.1.0/
+                        ms     ms  sec  sec  min  min                  min
+
+         ipv4    ipv6     npr   total   block  manual
+in          0       0       0       0
+out         0       0       1       1       0       1
+total       0       0       1       1
+
+Local addresses: n/a
+
+➜  rctesting bcli -netinfo 4
+Bitcoin Core client v27.0.0rc1 regtest - server 70016/Satoshi:27.0.0/
+
+<->   type   net  v  mping   ping send recv  txn  blk  hb addrp addrl  age id address         version
+out manual   npr  1      1      1   12   12                              0  1 127.0.0.1:18244 70016/Satoshi:25.1.0/
+                        ms     ms  sec  sec  min  min                  min
+
+         ipv4    ipv6     npr   total   block  manual
+in          0       0       0       0
+out         0       0       1       1       0       1
+total       0       0       1       1
+
+Local addresses: n/a
+
+➜  rctesting bcli25 -netinfo 4
+Bitcoin Core client v25.1.0 regtest - server 70016/Satoshi:25.1.0/
+
+<->   type   net  mping   ping send recv  txn  blk  hb addrp addrl  age id address         version
+ in          npr      0      0   69   69                              1  1 127.0.0.1:50145 70016/Satoshi:27.0.0/
+                     ms     ms  sec  sec  min  min                  min
+
+         ipv4    ipv6     npr   total   block
+in          0       0       1       1
+out         0       0       0       0       0
+total       0       0       1       1
+
+Local addresses: n/a
+
+➜  rctesting bcli -conf=$DATA_DIR_25/bitcoin.conf -rpccookiefile=$DATA_DIR_25/regtest/.cookie -netinfo 4
+Bitcoin Core client v27.0.0rc1 regtest - server 70016/Satoshi:25.1.0/
+
+<->   type   net  v  mping   ping send recv  txn  blk  hb addrp addrl  age id address         version
+ in          npr  1      0      0   81   81                              1  1 127.0.0.1:50145 70016/Satoshi:27.0.0/
+                        ms     ms  sec  sec  min  min                  min
+
+         ipv4    ipv6     npr   total   block
+in          0       0       1       1
+out         0       0       0       0       0
+total       0       0       1       1
+
+Local addresses: n/a
+
+➜  rctesting
