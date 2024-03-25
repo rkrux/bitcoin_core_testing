@@ -1,0 +1,115 @@
+➜  ~ cd $RC_TEST_DIR
+➜  rctesting c
+➜  rctesting l $DATA_DIR_27/
+total 0
+drwxr-xr-x   2 aither  wheel    64B Mar 25 17:13 .
+drwxrwxrwt  10 root    wheel   320B Mar 25 17:13 ..
+➜  rctesting {
+echo "signet=1"
+echo "dnsseed=0"
+echo "fixedseeds=0"
+echo "debug=net"
+} > $DATA_DIR_27/bitcoin.conf
+➜  rctesting l $DATA_DIR_27/
+total 8
+drwxr-xr-x   3 aither  wheel    96B Mar 25 17:14 .
+drwxrwxrwt  10 root    wheel   320B Mar 25 17:13 ..
+-rw-r--r--   1 aither  wheel    42B Mar 25 17:14 bitcoin.conf
+➜  rctesting vi $DATA_DIR_27/bitcoin.conf
+➜  rctesting l $DATA_DIR_27/
+total 8
+drwxr-xr-x   3 aither  wheel    96B Mar 25 17:14 .
+drwxrwxrwt  10 root    wheel   320B Mar 25 17:13 ..
+-rw-r--r--   1 aither  wheel    42B Mar 25 17:14 bitcoin.conf
+➜  rctesting bitcoind-test -daemon -seednode=bitcoin.achow101.com:38333
+Bitcoin Core starting
+➜  rctesting bcli -netinfo 3
+Bitcoin Core client v27.0.0rc1 signet - server 70016/Satoshi:27.0.0/
+
+<->   type   net  v  mping   ping send recv  txn  blk  hb addrp addrl  age id version
+out   full  ipv4  1    359    359    0    0         0       853          0  1 70016/Satoshi:26.0.0/
+                        ms     ms  sec  sec  min  min                  min
+
+         ipv4    ipv6   total   block
+in          0       0       0
+out         1       0       1       0
+total       1       0       1
+
+Local addresses: n/a
+
+➜  rctesting cat $DATA_DIR_27/signet/debug.log | grep "v2\|peer=0"
+2024-03-25T11:45:01Z Bitcoin Core version v27.0.0rc1 (release build)
+2024-03-25T11:45:02Z [net] trying v2 connection bitcoin.achow101.com:38333 lastseen=0.0hrs
+2024-03-25T11:45:03Z [net] Added connection peer=0
+2024-03-25T11:45:03Z [net] sending version (102 bytes) peer=0
+2024-03-25T11:45:03Z [net] send version message: version 70016, blocks=0, txrelay=1, peer=0
+2024-03-25T11:45:03Z [net] start sending v2 handshake to peer=0
+2024-03-25T11:45:04Z [net] received: version (103 bytes) peer=0
+2024-03-25T11:45:04Z [net] sending wtxidrelay (0 bytes) peer=0
+2024-03-25T11:45:04Z [net] sending sendaddrv2 (0 bytes) peer=0
+2024-03-25T11:45:04Z [net] sending verack (0 bytes) peer=0
+2024-03-25T11:45:04Z [net] sending getaddr (0 bytes) peer=0
+2024-03-25T11:45:04Z [net] receive version message: /Satoshi:27.99.0/: version 70016, blocks=188350, us=223.190.86.230:29541, txrelay=1, peer=0
+2024-03-25T11:45:04Z [net] received: wtxidrelay (0 bytes) peer=0
+2024-03-25T11:45:04Z [net] received: sendaddrv2 (0 bytes) peer=0
+2024-03-25T11:45:04Z [net] received: verack (0 bytes) peer=0
+2024-03-25T11:45:04Z New addr-fetch v2 peer connected: version: 70016, blocks=188350, peer=0
+2024-03-25T11:45:04Z [net] sending sendcmpct (9 bytes) peer=0
+2024-03-25T11:45:04Z [net] sending ping (8 bytes) peer=0
+2024-03-25T11:45:04Z [net] sending feefilter (8 bytes) peer=0
+2024-03-25T11:45:04Z [net] received: sendcmpct (9 bytes) peer=0
+2024-03-25T11:45:04Z [net] received: ping (8 bytes) peer=0
+2024-03-25T11:45:04Z [net] sending pong (8 bytes) peer=0
+2024-03-25T11:45:04Z [net] received: getheaders (965 bytes) peer=0
+2024-03-25T11:45:04Z [net] Ignoring getheaders from peer=0 because active chain has too little work; sending empty response
+2024-03-25T11:45:04Z [net] sending headers (1 bytes) peer=0
+2024-03-25T11:45:04Z [net] received: feefilter (8 bytes) peer=0
+2024-03-25T11:45:04Z [net] received: feefilter of 0.00001000 BTC/kvB from peer=0
+2024-03-25T11:45:05Z [net] received: addrv2 (20401 bytes) peer=0
+2024-03-25T11:45:05Z [net] Received addr: 1000 addresses (1000 processed, 0 rate-limited) from peer=0
+2024-03-25T11:45:05Z [net] addrfetch connection completed peer=0; disconnecting
+2024-03-25T11:45:05Z [net] disconnecting peer=0
+2024-03-25T11:45:05Z [net] Cleared nodestate for peer=0
+2024-03-25T11:45:11Z [net] sending sendaddrv2 (0 bytes) peer=1
+2024-03-25T11:45:11Z [net] received: sendaddrv2 (0 bytes) peer=1
+2024-03-25T11:45:11Z [net] received: addrv2 (16154 bytes) peer=1
+2024-03-25T11:45:25Z [net] trying v2 connection [2a01:5ec0:e008:8338:5faf:e7b2:43d6:3f0d]:38333 lastseen=669.9hrs
+2024-03-25T11:45:37Z [net] trying v2 connection 197.232.61.253:38333 lastseen=343.3hrs
+2024-03-25T11:45:43Z [net] trying v2 connection [2001:470:1f07:6f2:f489:d032:cca:f00d]:38333 lastseen=35.5hrs
+2024-03-25T11:45:55Z [net] trying v2 connection 64.31.3.72:38333 lastseen=100.2hrs
+2024-03-25T11:46:01Z [net] trying v2 connection 64.31.3.89:38333 lastseen=107.4hrs
+➜  rctesting bcli addnode 74.208.205.30:38333 add
+➜  rctesting bcli getaddednodeinfo
+[
+  {
+    "addednode": "74.208.205.30:38333",
+    "connected": true,
+    "addresses": [
+      {
+        "address": "74.208.205.30:38333",
+        "connected": "outbound"
+      }
+    ]
+  }
+]
+➜  rctesting bcli getpeerinfo | jq '.[] | transport_protocol_type'
+jq: error: transport_protocol_type/0 is not defined at <top-level>, line 1:
+.[] | transport_protocol_type
+jq: 1 compile error
+➜  rctesting bcli getpeerinfo | jq '.[] | .transport_protocol_type'
+"v1"
+"v1"
+"v2"
+"v2"
+➜  rctesting bcli getpeerinfo | jq '.[] | "\(.transport_protocol_type) \(.subver) \(.lastrecv)"'
+"v1 /Satoshi:26.0.0/ 1711367881"
+"v1 /Satoshi:26.0.0/ 1711367872"
+"v2 /Satoshi:26.99.0/ 1711367881"
+"v2 /Satoshi:26.0.0/ 1711367882"
+"v1 /Satoshi:26.0.0/ 1711367882"
+"v1 /Satoshi:26.0.0/ 1711367854"
+"v1 /Satoshi:26.0.0/ 1711367865"
+"v1 /Satoshi:24.0.1/ 1711367885"
+"v1 /Satoshi:26.0.0/ 1711367856"
+"v1 /Satoshi:25.0.0(inquisition)/ 1711367875"
+"v1 /Satoshi:24.99.0/ 1711367846"
