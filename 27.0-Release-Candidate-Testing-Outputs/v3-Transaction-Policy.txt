@@ -1,0 +1,708 @@
+➜  rctesting ps aux | grep bitcoin
+aither            8052   0.0  0.0 34121360    564 s000  R+    3:03PM   0:00.00 grep --color=auto --exclude-dir=.bzr --exclude-dir=CVS --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn bitcoin
+aither            8039   0.0  0.3 34257232  43804   ??  Ss    3:03PM   0:00.07 /Users/aither/projects/rctesting/bitcoin-27.0rc1/bin/bitcoind -datadir=/tmp/27-rc-test -daemon
+➜  rctesting c
+➜  rctesting open
+➜  rctesting bcli createwallet v3txwallet
+{
+  "name": "v3txwallet"
+}
+➜  rctesting address_a=$(bcli getnewaddress)
+➜  rctesting address_b=$(bcli getnewaddress)
+➜  rctesting bcli generatetoaddress 1 $address_a
+[
+  "43649838112a8706ce19eb4107978f2371a95c39c1c660749a17f8380f205b3b"
+]
+➜  rctesting bcli -generate 100
+{
+  "address": "bcrt1q9krn5gyna5j5vmaj3nzdzdrj6luste2qdpuxuj",
+  "blocks": [
+    "0bdd7658fe08eae6ad47eb5ca099155192ca0b2b7213feb188439cb04b4622e8",
+    "73d0502f565600af8ecdace631d3284db273fd07930a912fbb1c18adb50d8043",
+    "233b37d0b2fcd05618a9a2081038630840441622365181972e03d5c74f8e38b2",
+    "46b5c0a98edcc5e925ad5ecbf3af5736a94860cb0cac2a611f82f7efdb8f2089",
+    "69be805de124f35f9dc01d8147f7dd095d5dc4dd8690aff0915275d88106767c",
+    "491b74bb1986b50dba91407e6d9c1835dc3c692f461b8e431e737d03c90c0095",
+    "5b91753b6e392cb425ba8d9c0a51333eaf3887a8de89dde84d5113825bcafdbf",
+    "321c09f8881d76269611dc27a7caa28f4b447c5e78b27e2914993b5f6de4c3e3",
+    "61cc4b19137ccc18b77677df2cb498d82defcbd7f82688ae709ed68b631a7b0b",
+    "41e0f9275c164093b512d5889790525b4be53732e5defd6b69a8a1814e67c0f9",
+    "135538caf1438eb8f9bd16fcd906dc11f655628bb85f05bf9ab4435bd399abb0",
+    "4316b99c42651d5f23f3f6e25a818769c43cc2167d98fa09986215a173afa6eb",
+    "51f42b953464b6072b1d1a8dc5f53e41f3f6fbb3e20dcaece2f457ba420bcdc5",
+    "3138c48827a6a2dfa22b7ce923a282e2a7e29d84795641278c3a51e9d9674c56",
+    "7ce4a8f34e3b4252c8a8ddc5aa848e406e9e63f43c6afdd5ba5ee55224333b3d",
+    "58ea8964b65371e7a2c4c6690dfae5455017efadb869fc69cee3c960c2019d8e",
+    "251a1ded4e866271250284640102cb0cdcf3881e130da828ab8df9cdb9bbe95a",
+    "170e17bc23a11340e42cd789e30035417ab4085fa0a4ba426374e543a7a15d94",
+    "3822c13ab4f501a4e52ff647748b3d2d1f3d7f3ae999da4e93e53c36ecb9f860",
+    "7e1cab2070e27968deb6691d0782d5da7e1d9eeb76b6570aefaf753e91ace83c",
+    "1d8793326d794a1dc88d83793d078615ecfa46fc8d15017d45c7fc74de71ebba",
+    "4cac765b6361a6a92bb634cf02df301238e55c9d1b854d4ed8e4607f2d310f1e",
+    "25df28f582bbb4477b0afcedece718f7f47a66d5ed5b3fcac9969cad4bf633b4",
+    "17b23498e12913d4e38defac331c0c64ef41efc94cc19c2ed3dacaa3c2a4d099",
+    "3d31db832b64fecf9b23c0daca98dcfacd8bc7dd13d82695013e8f60a5255b58",
+    "2fc3e093e702db6a746e648afe41c44748d82b2c08c4a310f765528f816f1ac5",
+    "5db160f1e75dde6c25c2c1c927f8442ff240f19f22a823bab97a6148c2305294",
+    "37898ed695066cb529dbd102439d727ec9bf92ed96d19e5b195f99c562d72b37",
+    "7093023ed449d735df6951c7d59744eeaa052b428f775db0c46f1752f1b31a74",
+    "13be669674a92a7523451b9c92dc145669e1106956d982f8a5483461cd04db22",
+    "20d66e8462fdda0c76b69c24df7edbc358f9a0ceeb7da472c0f60b0b154ffdac",
+    "3c6e37eefccaca8cb01bcbaa5bc359f1eaaa2d9ab126f3e72924a63a905a98dc",
+    "35d6a65cc2ddf064104b15c2e5cd5863da0ec4b370c9a10337a2f1389331a0c6",
+    "07f460ca827e2116684b5ce82009999ae6dbeadddedc872bdfe0044dc98b2573",
+    "79768bb732286f2de6c4d30a33c6d347fb389de5f3f2add9d5276c2f0865a31c",
+    "478fda7a569ecf30eef37477e91f1e1e69537873b9452e0fb7d35cbfa84c5958",
+    "0de1ed57a84602fa0da65633044e019eec857fb8be998d5ad74d681001b95434",
+    "469c7e8c0089f3ad1cd7ad0143a3200ef7edeaf2a41b32542abce20a2b13e5c3",
+    "4bd6c9d20c2022ddf667a2dffc6790019ae0a93a889690e003cd555c5da8d777",
+    "47b2a345c39aeea5980d44b82d4bcb2894a7e78b01bb53dbb4a2c3d459040cde",
+    "78b6177713b4cde8e3fa4fd2f94300a9dc1882005a1d0ec6ba43cd01f9953fa6",
+    "25894f9126398ec538df848295c6c4ebb0ff0c715c01031fa014effb9d81f618",
+    "233641d9b52bf2a327fe4b1c9c7979b224c8fb4a6b72c17f7a46c64317564408",
+    "56ddf6c5debfd076e62e316994bd58dd1feadcc6101081cd9fa8616868d130a8",
+    "42b0c104f2c39adb730c6eb1bbd4a9883bbc0aa635138fb11bb93f96d171d52c",
+    "0bded7adf83aa75c3305d9e4160cd1d5b2b87f89d37560e04049457db83e1573",
+    "1283c078406a4abcbe71c28dd99775fe7fde2f9e5a9dba94c752d5bace76b05d",
+    "2c5b365ace33eac6b0a7ce02e684a46c7182136ca96ab2d2c87ddae076c3d5a4",
+    "79af3e5a4a24b72edec741f487c616d5a395ced1a2f6c12b125480d4985d38b5",
+    "3c9a6f5dfd5388bf4a304f28c8b9edbfced2313cdf23cd989904359037ee092a",
+    "57f18b439ec941a9d933e3e15cce9bd785692643c06428e3d2c54bb6ebd7f4e4",
+    "75ff1786c578df492e68eb2de3137d7b9bfb3b6aa6e0fdbbc8bf8df2ff004213",
+    "597abec8bdc73f51572f060bd878f07665bc8bc1692e219a7cf3969a865e271b",
+    "04cd189ec82c90234f2a321c2a43d61c665de034a3ef93b30522b2f47e8697e9",
+    "362f88872698172fe27c42ebe33f860c9bc322c7f591a18b7cfc0a0b5b9fb0c7",
+    "483b8994d6de50ab87a2a4665aadd7124a149af042635a4609801b2fee1e520d",
+    "2d4f4f2d06227b6283354db01962f61e166e9c274cc5c27458c8e0a53475202f",
+    "62ae7f28479348080e403346e04da107ca8549b46b1034211f853db13acc3506",
+    "4518b7a964bbc9367b26f4c219640830bad4790b36a26ebd4c63fb58b260123b",
+    "6162545209ff2956d4b7df1c3d55c8638db7218dfa97cb9f74062fe9366c1486",
+    "7e363574f68bc14323a1b6acf7d06ebee86f257820f45f73effb3964e670823d",
+    "4c9df9524bd0ca815fb1c7f7b291bd90fc5f858cf97110cda91461e0e3d1fa73",
+    "24940632395d2cd6c4caea18a496c58ead048e578fc6f7c5e61b52757d306b37",
+    "0c7d24bfccc8d471083548d6dfd0f0d2c92e1f551fffeb5e193e75407a8b2e96",
+    "0d75cf56e4d8f24915ebaf4abb4ffdf07f21af90742191075752a1f85f914fd2",
+    "0c747d2ffced0cac3247ac43a5793324e378dd6446365ab36260fa0d73b58977",
+    "07661f786c54fd30c24f294bc443abbfb6e775e47984b6781d5d9f11a3c5ad6a",
+    "173b5e0de85587a547444e3410439be30b294a4bfc00f68ee089fc38db9c5bcd",
+    "268a59fdebb0b4ae4ea7aa1d0bbea528bdf2c77b7ced2a8590136567cfa91d4b",
+    "1517e6987748454911bad9d8074b0a9c5a60efdf809cce80adbeb59504687ff7",
+    "255c5fc6009fe8c91384e05b0200ff5e36e79907a79c5464d2cbc00b3ea405d3",
+    "05b529e1eef30a815a565d007f7bd30c546f92a5b1f321b8bd886a120a8bddb6",
+    "22d475743f38438a57c3d473bfb4ae61e9636824e0645935561c7c6f77a02aa0",
+    "2b496b633e2968d5432751eb5047917d323ca642ed7f54d94ede3bcf0e069e30",
+    "609ce157c1356538b5aeb6e0f44b4759ab3731b6e67d745b5f1824170dfdeddf",
+    "00574f24e3e084d4000efc217629d337c626c7f73ff2ad965cfada88a8b2cbd2",
+    "066115266b29726e2899d337b87e165ff8f656ac42cfe1616786a4e5a6db1dda",
+    "450626d3c667a120ff45a48e991dd0fec3c1b0f039f1d925fe167b9798036cfc",
+    "1cb62537d175c934839a113db1e53d1b5187fba09c2432eb65ff419981b2216e",
+    "05191e7dea41e2f76982e66166cf80e9a5523f7f21592f35fba42b78daab7154",
+    "36be9471c3f1e67a8f5947fb06372b077114e8ece82342c5d56fad2f923256a3",
+    "2552c204aa30680dcf7e5f53405ab6938c12419afac1e92c23916bf16e4b7bf9",
+    "2afce7ff881e1119eb7790eae7c7f681b5906d0eb96409aed6d087e82a803a3f",
+    "7fd4462c2a1a593a23b5bdda0555f1f940026aaa960dc45abd8b50f01d1f2a0e",
+    "416248a6b2f72ee993dababb28cfc3975a43ac099b93ac1fb484a87f038e72d9",
+    "1897ae7a9f1e24ecf2e31173c27ab4eac03d9637cd4607bb11971ccd461884a5",
+    "3d33e6e6491e85737fdeebb44ff040c1a5d3b1055a2ba112d1a6d2c939eef7d0",
+    "1393702aabcf86032592185db9573a10a0aca72039f273d6b84ad62e89be013b",
+    "25b212bd24b0bd1f8775d7cd6328fe9b83b39c165f599db66327c20c20fa7170",
+    "12bde5d1e2385b9889cf67c1758dd1fba0fece8d7b00a37982817d5b0db791d0",
+    "7b3442974314e8891f85ed7f2cda1d221b95e0212bdc4cc534eca1cdbc46585b",
+    "66f1b602c465e5567ec502118208004ae26bb7ff9e4af5295c35039d199f87a7",
+    "3335e6289dd71b137a6f16b87bb7950e538ffa45460bbc9e49ccb27a9aae16ce",
+    "3a8423e0c08656e2c94bf3e5fd9651b2b0becc2d416c1a3b6153aca942363ff8",
+    "7d51c787b655878ff49421a377dd0387c6b9e0b1206714e9f9b5144764ccf0c4",
+    "5f9540d41b7228e8738fa21d9c0c71c4723d280b7278693fd2b51138d80972ed",
+    "23a3563cb3700ce7ead2ebfa67c72079443b07007bab536c09ae8860b1189c1a",
+    "55b1b0896ffec3979130945ebe79cbc1d23fd004ea10b8e2e76c1ce3804254a8",
+    "4435b5f1db3d7a26d1edb639c1bf1ed3e2a16a775c9b1c73edb5159505a4f3a0",
+    "7745a5c57eaaf0f1d49bef45a1287d17125f0648db9b5859781acab30ba74de8"
+  ]
+}
+➜  rctesting bcli listunspent
+[
+  {
+    "txid": "cb460ecf2413dabb6472aa630ed92265b92533c20e50a6fde6f0c954298e7041",
+    "vout": 0,
+    "address": "bcrt1qkr5an4f2flwc028qetwze9welvm6rm7h0c9gux",
+    "label": "",
+    "scriptPubKey": "0014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd7",
+    "amount": 50.00000000,
+    "confirmations": 101,
+    "spendable": true,
+    "solvable": true,
+    "desc": "wpkh([7bb2002c/84h/1h/0h/0/0]02e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c)#dw7p20ep",
+    "parent_descs": [
+      "wpkh(tpubD6NzVbkrYhZ4YjyZAEdUfXmSVeVqWa7hU6ipxWRJuuWch9FEDFq1HQaxaE8H59vEEkYoiW7qepCirT7XYNAGNsCmkqBsRNKaH1UtDjiHNuR/84h/1h/0h/0/*)#x77texa9"
+    ],
+    "safe": true
+  }
+]
+➜  rctesting coinbase_txid=$(bcli listunspent | jq -r .[0].txid)
+zsh: no matches found: .[0].txid
+➜  rctesting coinbase_txid=$(bcli listunspent | jq -r '.[0].txid')
+➜  rctesting echo $coinbase_txid
+cb460ecf2413dabb6472aa630ed92265b92533c20e50a6fde6f0c954298e7041
+➜  rctesting parent_raw_tx=$(bcli createrawtransaction "[{\"txid\": \"$coinbase_txid\", \"vout\": 0}]" "[{\"$address_b\": 1},{\"$address_a\": 48.999}]")
+
+➜  rctesting echo $parent_raw_tx
+020000000141708e2954c9f0e6fda6500ec23325b96522d90e63aa7264bbda1324cf0e46cb0000000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04608a0e2401000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd700000000
+➜  rctesting signed_parent_tx_result=$(bcli signrawtransactionwithwallet $parent_raw_tx)
+
+➜  rctesting echo $signed_parent_tx_result
+
+{
+  "hex": "0200000000010141708e2954c9f0e6fda6500ec23325b96522d90e63aa7264bbda1324cf0e46cb0000000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04608a0e2401000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd70247304402201ad2eb4f4b78bd289a2fa0891343ba421ce8f7d746fefa95584e223ed5ef15020220295fee1d1a4675fa744293ed661a3db7a14b9f610ed08e194c6b28ba2ef27b98012102e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c00000000",
+  "complete": true
+}
+➜  rctesting signed_parent_tx=$(echo $signed_parent_tx_result | jq -r .hex)
+➜  rctesting echo $signed_parent_tx
+0200000000010141708e2954c9f0e6fda6500ec23325b96522d90e63aa7264bbda1324cf0e46cb0000000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04608a0e2401000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd70247304402201ad2eb4f4b78bd289a2fa0891343ba421ce8f7d746fefa95584e223ed5ef15020220295fee1d1a4675fa744293ed661a3db7a14b9f610ed08e194c6b28ba2ef27b98012102e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c00000000
+➜  rctesting decoded_parent_tx=$(bcli decoderawtransaction $signed_parent_tx)
+
+➜  rctesting echo "$decoded_parent_tx"
+
+{
+  "txid": "4eaa8f789ca3a43a2e2e29d1850597006abd33a5fc39e95de85f28c2d83fbf15",
+  "hash": "ad8b68ce43acddc02bbe086b0cc5c0200351982f55e0b9028fcea0914a4cb5af",
+  "version": 2,
+  "size": 222,
+  "vsize": 141,
+  "weight": 561,
+  "locktime": 0,
+  "vin": [
+    {
+      "txid": "cb460ecf2413dabb6472aa630ed92265b92533c20e50a6fde6f0c954298e7041",
+      "vout": 0,
+      "scriptSig": {
+        "asm": "",
+        "hex": ""
+      },
+      "txinwitness": [
+        "304402201ad2eb4f4b78bd289a2fa0891343ba421ce8f7d746fefa95584e223ed5ef15020220295fee1d1a4675fa744293ed661a3db7a14b9f610ed08e194c6b28ba2ef27b9801",
+        "02e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c"
+      ],
+      "sequence": 4294967293
+    }
+  ],
+  "vout": [
+    {
+      "value": 1.00000000,
+      "n": 0,
+      "scriptPubKey": {
+        "asm": "0 fc7705f21f583a3fcfbb61ec203de7a999acfe04",
+        "desc": "addr(bcrt1ql3mstusltqarlnamv8kzq0084xv6elsydfweju)#jsds7aqk",
+        "hex": "0014fc7705f21f583a3fcfbb61ec203de7a999acfe04",
+        "address": "bcrt1ql3mstusltqarlnamv8kzq0084xv6elsydfweju",
+        "type": "witness_v0_keyhash"
+      }
+    },
+    {
+      "value": 48.99900000,
+      "n": 1,
+      "scriptPubKey": {
+        "asm": "0 b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd7",
+        "desc": "addr(bcrt1qkr5an4f2flwc028qetwze9welvm6rm7h0c9gux)#tw3n6qk0",
+        "hex": "0014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd7",
+        "address": "bcrt1qkr5an4f2flwc028qetwze9welvm6rm7h0c9gux",
+        "type": "witness_v0_keyhash"
+      }
+    }
+  ]
+}
+➜  rctesting parent_txid=$(echo $decoded_parent_tx | jq -r .txid)
+➜  rctesting echo $parent_txid
+4eaa8f789ca3a43a2e2e29d1850597006abd33a5fc39e95de85f28c2d83fbf15
+➜  rctesting child_raw_tx=$(bcli createrawtransaction "[{\"txid\": \"$parent_txid\", \"vout\": 1}]" "[{\"$address_b\": 1},{\"$address_a\": 47.998}]")
+
+➜  rctesting echo $child_raw_tx
+
+020000000115bf3fd8c2285fe85de939fca533bd6a00970585d1292e2e3aa4a39c788faa4e0100000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04c022171e01000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd700000000
+➜  rctesting parent_spk=$(echo $decoded_parent_tx | jq -r .vout[1].scriptPubKey.hex)
+zsh: no matches found: .vout[1].scriptPubKey.hex
+➜  rctesting parent_spk=$(echo $decoded_parent_tx | jq -r '.vout[1].scriptPubKey.hex')
+➜  rctesting echo $parent_spk
+0014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd7
+➜  rctesting parent_witness_script=$(echo $decoded_parent_tx | jq -r .vin[0].txinwitness[1])
+zsh: no matches found: .vin[0].txinwitness[1]
+➜  rctesting parent_witness_script=$(echo $decoded_parent_tx | jq -r '.vin[0].txinwitness[1]')
+➜  rctesting echo $parent_witness_script
+02e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c
+➜  rctesting signed_child_tx_result=$(bcli signrawtransactionwithwallet $child_raw_tx "[{\"txid\":\"$parent_txid\", \"vout\": 1, \"scriptPubKey\": \"$parent_spk\", \"witnessScript\": \"$parent_witness_script\", \"amount\": 48.999}]")
+
+➜  rctesting signed_child_tx=$(echo $signed_child_tx_result | jq -r .hex)
+
+➜  rctesting echo "$signed_child_tx_result"
+
+{
+  "hex": "0200000000010115bf3fd8c2285fe85de939fca533bd6a00970585d1292e2e3aa4a39c788faa4e0100000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04c022171e01000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd702473044022072cb174cc92a36b900f794fc320a15ed49e9240f628bfc0cde2dd02e25c50e7a0220639c964cc3bf5b2b8bcfe6e836a8c31d3d0d23db4b8fe73dbad3610d4e613efb012102e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c00000000",
+  "complete": true
+}
+➜  rctesting decoded_child_tx=$(bcli decoderawtransaction $signed_child_tx)
+➜  rctesting echo "$decoded_child_tx"
+{
+  "txid": "a8e2d6338b995101aae2e033d61306b3a417fd1eee78272ec795dd904d9bd6fb",
+  "hash": "06e5494edb55b2e840fc0e03c807be2f93a3999867e3199b18b0f0b379904a1b",
+  "version": 2,
+  "size": 222,
+  "vsize": 141,
+  "weight": 561,
+  "locktime": 0,
+  "vin": [
+    {
+      "txid": "4eaa8f789ca3a43a2e2e29d1850597006abd33a5fc39e95de85f28c2d83fbf15",
+      "vout": 1,
+      "scriptSig": {
+        "asm": "",
+        "hex": ""
+      },
+      "txinwitness": [
+        "3044022072cb174cc92a36b900f794fc320a15ed49e9240f628bfc0cde2dd02e25c50e7a0220639c964cc3bf5b2b8bcfe6e836a8c31d3d0d23db4b8fe73dbad3610d4e613efb01",
+        "02e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c"
+      ],
+      "sequence": 4294967293
+    }
+  ],
+  "vout": [
+    {
+      "value": 1.00000000,
+      "n": 0,
+      "scriptPubKey": {
+        "asm": "0 fc7705f21f583a3fcfbb61ec203de7a999acfe04",
+        "desc": "addr(bcrt1ql3mstusltqarlnamv8kzq0084xv6elsydfweju)#jsds7aqk",
+        "hex": "0014fc7705f21f583a3fcfbb61ec203de7a999acfe04",
+        "address": "bcrt1ql3mstusltqarlnamv8kzq0084xv6elsydfweju",
+        "type": "witness_v0_keyhash"
+      }
+    },
+    {
+      "value": 47.99800000,
+      "n": 1,
+      "scriptPubKey": {
+        "asm": "0 b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd7",
+        "desc": "addr(bcrt1qkr5an4f2flwc028qetwze9welvm6rm7h0c9gux)#tw3n6qk0",
+        "hex": "0014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd7",
+        "address": "bcrt1qkr5an4f2flwc028qetwze9welvm6rm7h0c9gux",
+        "type": "witness_v0_keyhash"
+      }
+    }
+  ]
+}
+➜  rctesting child_txid=$(echo $decoded_child_tx | jq -r .txid)
+➜  rctesting child_spk=$(echo $decoded_child_tx | jq -r .vout[1].scriptPubKey.hex)
+zsh: no matches found: .vout[1].scriptPubKey.hex
+➜  rctesting child_spk=$(echo $decoded_child_tx | jq -r '.vout[1].scriptPubKey.hex')
+➜  rctesting child_witness_script=$(echo $decoded_child_tx | jq -r .vin[0].txinwitness[1])
+zsh: no matches found: .vin[0].txinwitness[1]
+➜  rctesting child_witness_script=$(echo $decoded_child_tx | jq -r '.vin[0].txinwitness[1]')
+➜  rctesting grandchild_raw_tx=$(bcli createrawtransaction "[{\"txid\": \"$child_txid\", \"vout\": 1}]" "[{\"$address_b\": 1},{\"$address_a\": 46.997}]")
+
+➜  rctesting echo $grandchild_raw_tx
+
+0200000001fbd69b4d90dd95c72e2778ee1efd17a4b30613d633e0e2aa0151998b33d6e2a80100000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe0420bb1f1801000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd700000000
+➜  rctesting signed_grandchild_tx_result=$(bcli signrawtransactionwithwallet $grandchild_raw_tx "[{\"txid\":\"$child_txid\", \"vout\": 1, \"scriptPubKey\": \"$child_spk\", \"witnessScript\": \"$child_witness_script\", \"amount\": 47.998}]")
+
+➜  rctesting signed_grandchild_tx=$(echo $signed_grandchild_tx_result | jq -r .hex)
+
+➜  rctesting echo "$signed_grandchild_tx_result"
+
+{
+  "hex": "02000000000101fbd69b4d90dd95c72e2778ee1efd17a4b30613d633e0e2aa0151998b33d6e2a80100000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe0420bb1f1801000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd702473044022033560fe31ed823e83d5ad82af79aee73b714410981387a605c99a8d8807cc89602201a8889bc76e77905d9dac6d4f28a53e127fa912bedc31e470dc54873081f2f20012102e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c00000000",
+  "complete": true
+}
+➜  rctesting bcli testmempoolaccept [\"$signed_parent_tx\",\"$signed_child_tx\",\"$signed_grandchild_tx\"]
+
+zsh: no matches found: ["0200000000010141708e2954c9f0e6fda6500ec23325b96522d90e63aa7264bbda1324cf0e46cb0000000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04608a0e2401000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd70247304402201ad2eb4f4b78bd289a2fa0891343ba421ce8f7d746fefa95584e223ed5ef15020220295fee1d1a4675fa744293ed661a3db7a14b9f610ed08e194c6b28ba2ef27b98012102e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c00000000","0200000000010115bf3fd8c2285fe85de939fca533bd6a00970585d1292e2e3aa4a39c788faa4e0100000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04c022171e01000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd702473044022072cb174cc92a36b900f794fc320a15ed49e9240f628bfc0cde2dd02e25c50e7a0220639c964cc3bf5b2b8bcfe6e836a8c31d3d0d23db4b8fe73dbad3610d4e613efb012102e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c00000000","02000000000101fbd69b4d90dd95c72e2778ee1efd17a4b30613d633e0e2aa0151998b33d6e2a80100000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe0420bb1f1801000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd702473044022033560fe31ed823e83d5ad82af79aee73b714410981387a605c99a8d8807cc89602201a8889bc76e77905d9dac6d4f28a53e127fa912bedc31e470dc54873081f2f20012102e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c00000000"]
+➜  rctesting bcli testmempoolaccept '[\"$signed_parent_tx\",\"$signed_child_tx\",\"$signed_grandchild_tx\"]'
+
+error: Error parsing JSON: [\"$signed_parent_tx\",\"$signed_child_tx\",\"$signed_grandchild_tx\"]
+➜  rctesting bcli testmempoolaccept '["$signed_parent_tx","$signed_child_tx","$signed_grandchild_tx"]'
+
+error code: -22
+error message:
+TX decode failed: $signed_parent_tx Make sure the tx has at least one input.
+➜  rctesting echo $signed_parent_tx\
+>
+➜  rctesting echo $signed_parent_tx
+0200000000010141708e2954c9f0e6fda6500ec23325b96522d90e63aa7264bbda1324cf0e46cb0000000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04608a0e2401000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd70247304402201ad2eb4f4b78bd289a2fa0891343ba421ce8f7d746fefa95584e223ed5ef15020220295fee1d1a4675fa744293ed661a3db7a14b9f610ed08e194c6b28ba2ef27b98012102e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c00000000
+➜  rctesting echo $signed_child_tx
+0200000000010115bf3fd8c2285fe85de939fca533bd6a00970585d1292e2e3aa4a39c788faa4e0100000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04c022171e01000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd702473044022072cb174cc92a36b900f794fc320a15ed49e9240f628bfc0cde2dd02e25c50e7a0220639c964cc3bf5b2b8bcfe6e836a8c31d3d0d23db4b8fe73dbad3610d4e613efb012102e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c00000000
+➜  rctesting echo $signed_grandchild_tx
+02000000000101fbd69b4d90dd95c72e2778ee1efd17a4b30613d633e0e2aa0151998b33d6e2a80100000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe0420bb1f1801000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd702473044022033560fe31ed823e83d5ad82af79aee73b714410981387a605c99a8d8807cc89602201a8889bc76e77905d9dac6d4f28a53e127fa912bedc31e470dc54873081f2f20012102e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c00000000
+➜  rctesting bcli testmempoolaccept '["0200000000010141708e2954c9f0e6fda6500ec23325b96522d90e63aa7264bbda1324cf0e46cb0000000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04608a0e2401000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd70247304402201ad2eb4f4b78bd289a2fa0891343ba421ce8f7d746fefa95584e223ed5ef15020220295fee1d1a4675fa744293ed661a3db7a14b9f610ed08e194c6b28ba2ef27b98012102e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c00000000","0200000000010115bf3fd8c2285fe85de939fca533bd6a00970585d1292e2e3aa4a39c788faa4e0100000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04c022171e01000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd702473044022072cb174cc92a36b900f794fc320a15ed49e9240f628bfc0cde2dd02e25c50e7a0220639c964cc3bf5b2b8bcfe6e836a8c31d3d0d23db4b8fe73dbad3610d4e613efb012102e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c00000000","02000000000101fbd69b4d90dd95c72e2778ee1efd17a4b30613d633e0e2aa0151998b33d6e2a80100000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe0420bb1f1801000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd702473044022033560fe31ed823e83d5ad82af79aee73b714410981387a605c99a8d8807cc89602201a8889bc76e77905d9dac6d4f28a53e127fa912bedc31e470dc54873081f2f20012102e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c00000000"]'
+[
+  {
+    "txid": "4eaa8f789ca3a43a2e2e29d1850597006abd33a5fc39e95de85f28c2d83fbf15",
+    "wtxid": "ad8b68ce43acddc02bbe086b0cc5c0200351982f55e0b9028fcea0914a4cb5af",
+    "allowed": true,
+    "vsize": 141,
+    "fees": {
+      "base": 0.00100000,
+      "effective-feerate": 0.00709219,
+      "effective-includes": [
+        "ad8b68ce43acddc02bbe086b0cc5c0200351982f55e0b9028fcea0914a4cb5af"
+      ]
+    }
+  },
+  {
+    "txid": "a8e2d6338b995101aae2e033d61306b3a417fd1eee78272ec795dd904d9bd6fb",
+    "wtxid": "06e5494edb55b2e840fc0e03c807be2f93a3999867e3199b18b0f0b379904a1b",
+    "allowed": true,
+    "vsize": 141,
+    "fees": {
+      "base": 0.00100000,
+      "effective-feerate": 0.00709219,
+      "effective-includes": [
+        "06e5494edb55b2e840fc0e03c807be2f93a3999867e3199b18b0f0b379904a1b"
+      ]
+    }
+  },
+  {
+    "txid": "9bd8e50c551609453cc880da2bb6e43a6abd442d6d9ebd5f9a12015ce0423f40",
+    "wtxid": "583dd8ca5d842a647ee4f726894eec755953f5fcaa93b037e03cbb0dacf330fb",
+    "allowed": true,
+    "vsize": 141,
+    "fees": {
+      "base": 0.00100000,
+      "effective-feerate": 0.00709219,
+      "effective-includes": [
+        "583dd8ca5d842a647ee4f726894eec755953f5fcaa93b037e03cbb0dacf330fb"
+      ]
+    }
+  }
+]
+➜  rctesting echo $parent_raw_tx
+020000000141708e2954c9f0e6fda6500ec23325b96522d90e63aa7264bbda1324cf0e46cb0000000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04608a0e2401000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd700000000
+➜  rctesting v3_parent_signed_tx_result=$(bcli signrawtransactionwithwallet "030000000141708e2954c9f0e6fda6500ec23325b96522d90e63aa7264bbda1324cf0e46cb0000000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04608a0e2401000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd700000000")
+
+➜  rctesting v3_parent_signed_tx=$(echo $v3_parent_signed_tx_result | jq -r .hex)
+
+➜  rctesting echo "$v3_parent_signed_tx_result"
+
+{
+  "hex": "0300000000010141708e2954c9f0e6fda6500ec23325b96522d90e63aa7264bbda1324cf0e46cb0000000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04608a0e2401000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd7024730440220603cc2a34b7a17c968c5795f0caf21ae3fb3841724dfe1113196ab717d58595c02201310b2d31e44e90d7f3de9dd1ec0ec15e7cb4f4e5c136116da68d6f6677054c7012102e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c00000000",
+  "complete": true
+}
+➜  rctesting bcli testmempoolaccept [\"$v3_parent_signed_tx\"]
+
+zsh: no matches found: ["0300000000010141708e2954c9f0e6fda6500ec23325b96522d90e63aa7264bbda1324cf0e46cb0000000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04608a0e2401000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd7024730440220603cc2a34b7a17c968c5795f0caf21ae3fb3841724dfe1113196ab717d58595c02201310b2d31e44e90d7f3de9dd1ec0ec15e7cb4f4e5c136116da68d6f6677054c7012102e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c00000000"]
+➜  rctesting bcli testmempoolaccept '[\"$v3_parent_signed_tx\"]'
+
+error: Error parsing JSON: [\"$v3_parent_signed_tx\"]
+➜  rctesting bcli testmempoolaccept '["$v3_parent_signed_tx"]'
+
+error code: -22
+error message:
+TX decode failed: $v3_parent_signed_tx Make sure the tx has at least one input.
+➜  rctesting bcli testmempoolaccept \'[\"$v3_parent_signed_tx\"]\'
+
+zsh: no matches found: '["0300000000010141708e2954c9f0e6fda6500ec23325b96522d90e63aa7264bbda1324cf0e46cb0000000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04608a0e2401000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd7024730440220603cc2a34b7a17c968c5795f0caf21ae3fb3841724dfe1113196ab717d58595c02201310b2d31e44e90d7f3de9dd1ec0ec15e7cb4f4e5c136116da68d6f6677054c7012102e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c00000000"]'
+➜  rctesting bcli testmempoolaccept '["0300000000010141708e2954c9f0e6fda6500ec23325b96522d90e63aa7264bbda1324cf0e46cb0000000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04608a0e2401000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd7024730440220603cc2a34b7a17c968c5795f0caf21ae3fb3841724dfe1113196ab717d58595c02201310b2d31e44e90d7f3de9dd1ec0ec15e7cb4f4e5c136116da68d6f6677054c7012102e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c00000000"]'
+[
+  {
+    "txid": "220a74476e02cb171783be8f94d139d1073bb7471881ae63385deb9e75f66702",
+    "wtxid": "9cd114bad3901ba00a5b95f97db608288f7e74714d1ab52a278e0d99be365bf6",
+    "allowed": false,
+    "reject-reason": "version"
+  }
+]
+➜  rctesting bcli stop
+Bitcoin Core stopping
+➜  rctesting bitcoind-test -daemon -acceptnonstdtxn
+Bitcoin Core starting
+➜  rctesting bcli loadwallet v3txwallet
+{
+  "name": "v3txwallet"
+}
+➜  rctesting bcli testmempoolaccept '["0300000000010141708e2954c9f0e6fda6500ec23325b96522d90e63aa7264bbda1324cf0e46cb0000000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04608a0e2401000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd7024730440220603cc2a34b7a17c968c5795f0caf21ae3fb3841724dfe1113196ab717d58595c02201310b2d31e44e90d7f3de9dd1ec0ec15e7cb4f4e5c136116da68d6f6677054c7012102e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c00000000"]'
+[
+  {
+    "txid": "220a74476e02cb171783be8f94d139d1073bb7471881ae63385deb9e75f66702",
+    "wtxid": "9cd114bad3901ba00a5b95f97db608288f7e74714d1ab52a278e0d99be365bf6",
+    "allowed": true,
+    "vsize": 141,
+    "fees": {
+      "base": 0.00100000,
+      "effective-feerate": 0.00709219,
+      "effective-includes": [
+        "9cd114bad3901ba00a5b95f97db608288f7e74714d1ab52a278e0d99be365bf6"
+      ]
+    }
+  }
+]
+➜  rctesting decoded_v3_parent_tx=$(bcli decoderawtransaction $v3_parent_signed_tx)
+
+➜  rctesting echo "$decoded_v3_parent_tx"
+
+{
+  "txid": "220a74476e02cb171783be8f94d139d1073bb7471881ae63385deb9e75f66702",
+  "hash": "9cd114bad3901ba00a5b95f97db608288f7e74714d1ab52a278e0d99be365bf6",
+  "version": 3,
+  "size": 222,
+  "vsize": 141,
+  "weight": 561,
+  "locktime": 0,
+  "vin": [
+    {
+      "txid": "cb460ecf2413dabb6472aa630ed92265b92533c20e50a6fde6f0c954298e7041",
+      "vout": 0,
+      "scriptSig": {
+        "asm": "",
+        "hex": ""
+      },
+      "txinwitness": [
+        "30440220603cc2a34b7a17c968c5795f0caf21ae3fb3841724dfe1113196ab717d58595c02201310b2d31e44e90d7f3de9dd1ec0ec15e7cb4f4e5c136116da68d6f6677054c701",
+        "02e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c"
+      ],
+      "sequence": 4294967293
+    }
+  ],
+  "vout": [
+    {
+      "value": 1.00000000,
+      "n": 0,
+      "scriptPubKey": {
+        "asm": "0 fc7705f21f583a3fcfbb61ec203de7a999acfe04",
+        "desc": "addr(bcrt1ql3mstusltqarlnamv8kzq0084xv6elsydfweju)#jsds7aqk",
+        "hex": "0014fc7705f21f583a3fcfbb61ec203de7a999acfe04",
+        "address": "bcrt1ql3mstusltqarlnamv8kzq0084xv6elsydfweju",
+        "type": "witness_v0_keyhash"
+      }
+    },
+    {
+      "value": 48.99900000,
+      "n": 1,
+      "scriptPubKey": {
+        "asm": "0 b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd7",
+        "desc": "addr(bcrt1qkr5an4f2flwc028qetwze9welvm6rm7h0c9gux)#tw3n6qk0",
+        "hex": "0014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd7",
+        "address": "bcrt1qkr5an4f2flwc028qetwze9welvm6rm7h0c9gux",
+        "type": "witness_v0_keyhash"
+      }
+    }
+  ]
+}
+➜  rctesting v3_parent_txid=$(echo $decoded_v3_parent_tx | jq -r .txid)
+
+➜  rctesting v3_parent_spk=$(echo $decoded_v3_parent_tx | jq -r .vout[1].scriptPubKey.hex)
+
+zsh: no matches found: .vout[1].scriptPubKey.hex
+➜  rctesting v3_parent_spk=$(echo $decoded_v3_parent_tx | jq -r '.vout[1].scriptPubKey.hex')
+
+➜  rctesting v3_parent_witness_script=$(echo $decoded_v3_parent_tx | jq -r '.vin[0].txinwitness[1]')
+
+➜  rctesting bcli createrawtransaction "[{\"txid\": \"$v3_parent_txid\", \"vout\": 1}]" "[{\"$address_b\": 1},{\"$address_a\": 47.998}]"
+
+02000000010267f6759eeb5d3863ae811847b73b07d139d1948fbe831717cb026e47740a220100000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04c022171e01000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd700000000
+➜  rctesting v3_child_signed_tx_result=$(bcli signrawtransactionwithwallet 03000000010267f6759eeb5d3863ae811847b73b07d139d1948fbe831717cb026e47740a220100000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04c022171e01000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd700000000 "[{\"txid\":\"$v3_parent_txid\", \"vout\": 1, \"scriptPubKey\": \"$v3_parent_spk\", \"witnessScript\": \"$v3_parent_witness_script\", \"amount\": 48.999}]")
+
+➜  rctesting v3_child_signed_tx=$(echo $v3_child_signed_tx_result | jq -r .hex)
+
+➜  rctesting echo "$v3_child_signed_tx_result"
+
+{
+  "hex": "030000000001010267f6759eeb5d3863ae811847b73b07d139d1948fbe831717cb026e47740a220100000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04c022171e01000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd702473044022030827aaef6249540e458d760bc437ed275ee106b483eb63143e1f9129f4b17840220571dd761535d6fd3221042be0e395deb31bfd58f76cf532a1586aa9cd0bf5468012102e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c00000000",
+  "complete": true
+}
+➜  rctesting decoded_v3_child_tx=$(bcli decoderawtransaction $v3_child_signed_tx)
+
+➜  rctesting echo "$decoded_v3_child_tx"
+
+{
+  "txid": "83e16a39113389111e8cf68d71718cad3b90169dca04d4e36be898be5fce4f31",
+  "hash": "55e62ba997f71d4aacdeee8a8a4744d49608d0afe85b921a559de62b539f84fe",
+  "version": 3,
+  "size": 222,
+  "vsize": 141,
+  "weight": 561,
+  "locktime": 0,
+  "vin": [
+    {
+      "txid": "220a74476e02cb171783be8f94d139d1073bb7471881ae63385deb9e75f66702",
+      "vout": 1,
+      "scriptSig": {
+        "asm": "",
+        "hex": ""
+      },
+      "txinwitness": [
+        "3044022030827aaef6249540e458d760bc437ed275ee106b483eb63143e1f9129f4b17840220571dd761535d6fd3221042be0e395deb31bfd58f76cf532a1586aa9cd0bf546801",
+        "02e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c"
+      ],
+      "sequence": 4294967293
+    }
+  ],
+  "vout": [
+    {
+      "value": 1.00000000,
+      "n": 0,
+      "scriptPubKey": {
+        "asm": "0 fc7705f21f583a3fcfbb61ec203de7a999acfe04",
+        "desc": "addr(bcrt1ql3mstusltqarlnamv8kzq0084xv6elsydfweju)#jsds7aqk",
+        "hex": "0014fc7705f21f583a3fcfbb61ec203de7a999acfe04",
+        "address": "bcrt1ql3mstusltqarlnamv8kzq0084xv6elsydfweju",
+        "type": "witness_v0_keyhash"
+      }
+    },
+    {
+      "value": 47.99800000,
+      "n": 1,
+      "scriptPubKey": {
+        "asm": "0 b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd7",
+        "desc": "addr(bcrt1qkr5an4f2flwc028qetwze9welvm6rm7h0c9gux)#tw3n6qk0",
+        "hex": "0014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd7",
+        "address": "bcrt1qkr5an4f2flwc028qetwze9welvm6rm7h0c9gux",
+        "type": "witness_v0_keyhash"
+      }
+    }
+  ]
+}
+➜  rctesting v3_child_txid=$(echo $decoded_v3_child_tx | jq -r .txid)
+
+➜  rctesting v3_child_spk=$(echo $decoded_v3_child_tx | jq -r .vout[1].scriptPubKey.hex)
+
+zsh: no matches found: .vout[1].scriptPubKey.hex
+➜  rctesting v3_child_spk=$(echo $decoded_v3_child_tx | jq -r '.vout[1].scriptPubKey.hex')
+
+➜  rctesting v3_child_witness_script=$(echo $decoded_v3_child_tx | jq -r '.vin[0].txinwitness[1]')
+
+➜  rctesting bcli createrawtransaction "[{\"txid\": \"$v3_child_txid\", \"vout\": 1}]" "[{\"$address_b\": 1},{\"$address_a\": 46.997}]"
+
+0200000001314fce5fbe98e86be3d404ca9d16903bad8c71718df68c1e11893311396ae1830100000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe0420bb1f1801000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd700000000
+➜  rctesting v3_grandchild_signed_tx_result=$(bcli signrawtransactionwithwallet 0300000001314fce5fbe98e86be3d404ca9d16903bad8c71718df68c1e11893311396ae1830100000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe0420bb1f1801000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd700000000 "[{\"txid\":\"$v3_child_txid\", \"vout\": 1, \"scriptPubKey\": \"$v3_child_spk\", \"witnessScript\": \"$v3_child_witness_script\", \"amount\": 47.998}]")
+
+➜  rctesting v3_grandchild_signed_tx=$(echo $v3_grandchild_signed_tx_result | jq -r .hex)
+
+➜  rctesting echo "$v3_grandchild_signed_tx_result"
+
+{
+  "hex": "03000000000101314fce5fbe98e86be3d404ca9d16903bad8c71718df68c1e11893311396ae1830100000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe0420bb1f1801000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd702473044022003aaaff75e9e82da2fc0f388c96ea1ed9ea7b9504cdbb5225dc4d45d0201cf320220153ce853d58a5931f51e68921867cca22c8eecfb7fe6911f30749a518cf5d7a1012102e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c00000000",
+  "complete": true
+}
+➜  rctesting bcli testmempoolaccept [\"$v3_parent_signed_tx\",\"$v3_child_signed_tx\",\"$v3_grandchild_signed_tx\"]
+
+zsh: no matches found: ["0300000000010141708e2954c9f0e6fda6500ec23325b96522d90e63aa7264bbda1324cf0e46cb0000000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04608a0e2401000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd7024730440220603cc2a34b7a17c968c5795f0caf21ae3fb3841724dfe1113196ab717d58595c02201310b2d31e44e90d7f3de9dd1ec0ec15e7cb4f4e5c136116da68d6f6677054c7012102e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c00000000","030000000001010267f6759eeb5d3863ae811847b73b07d139d1948fbe831717cb026e47740a220100000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04c022171e01000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd702473044022030827aaef6249540e458d760bc437ed275ee106b483eb63143e1f9129f4b17840220571dd761535d6fd3221042be0e395deb31bfd58f76cf532a1586aa9cd0bf5468012102e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c00000000","03000000000101314fce5fbe98e86be3d404ca9d16903bad8c71718df68c1e11893311396ae1830100000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe0420bb1f1801000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd702473044022003aaaff75e9e82da2fc0f388c96ea1ed9ea7b9504cdbb5225dc4d45d0201cf320220153ce853d58a5931f51e68921867cca22c8eecfb7fe6911f30749a518cf5d7a1012102e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c00000000"]
+➜  rctesting bcli testmempoolaccept "[\"$v3_parent_signed_tx\",\"$v3_child_signed_tx\",\"$v3_grandchild_signed_tx\"]"
+
+[
+  {
+    "txid": "220a74476e02cb171783be8f94d139d1073bb7471881ae63385deb9e75f66702",
+    "wtxid": "9cd114bad3901ba00a5b95f97db608288f7e74714d1ab52a278e0d99be365bf6",
+    "package-error": "v3-violation, tx 3cd108814b52bf12ce18cce7077f1afa8b52221dfecdabd5fe5ec8a0e7912347 (wtxid=f1244ef209842044f72a6bcbcaba55fd1e3ce8eed1e00d5314e7bbd9fe2cec09) would have too many ancestors"
+  },
+  {
+    "txid": "83e16a39113389111e8cf68d71718cad3b90169dca04d4e36be898be5fce4f31",
+    "wtxid": "55e62ba997f71d4aacdeee8a8a4744d49608d0afe85b921a559de62b539f84fe",
+    "package-error": "v3-violation, tx 3cd108814b52bf12ce18cce7077f1afa8b52221dfecdabd5fe5ec8a0e7912347 (wtxid=f1244ef209842044f72a6bcbcaba55fd1e3ce8eed1e00d5314e7bbd9fe2cec09) would have too many ancestors"
+  },
+  {
+    "txid": "3cd108814b52bf12ce18cce7077f1afa8b52221dfecdabd5fe5ec8a0e7912347",
+    "wtxid": "f1244ef209842044f72a6bcbcaba55fd1e3ce8eed1e00d5314e7bbd9fe2cec09",
+    "package-error": "v3-violation, tx 3cd108814b52bf12ce18cce7077f1afa8b52221dfecdabd5fe5ec8a0e7912347 (wtxid=f1244ef209842044f72a6bcbcaba55fd1e3ce8eed1e00d5314e7bbd9fe2cec09) would have too many ancestors"
+  }
+]
+➜  rctesting bcli testmempoolaccept "[\"$v3_parent_signed_tx\",\"$v3_child_signed_tx\"]"
+
+[
+  {
+    "txid": "220a74476e02cb171783be8f94d139d1073bb7471881ae63385deb9e75f66702",
+    "wtxid": "9cd114bad3901ba00a5b95f97db608288f7e74714d1ab52a278e0d99be365bf6",
+    "allowed": true,
+    "vsize": 141,
+    "fees": {
+      "base": 0.00100000,
+      "effective-feerate": 0.00709219,
+      "effective-includes": [
+        "9cd114bad3901ba00a5b95f97db608288f7e74714d1ab52a278e0d99be365bf6"
+      ]
+    }
+  },
+  {
+    "txid": "83e16a39113389111e8cf68d71718cad3b90169dca04d4e36be898be5fce4f31",
+    "wtxid": "55e62ba997f71d4aacdeee8a8a4744d49608d0afe85b921a559de62b539f84fe",
+    "allowed": true,
+    "vsize": 141,
+    "fees": {
+      "base": 0.00100000,
+      "effective-feerate": 0.00709219,
+      "effective-includes": [
+        "55e62ba997f71d4aacdeee8a8a4744d49608d0afe85b921a559de62b539f84fe"
+      ]
+    }
+  }
+]
+➜  rctesting  bcli submitpackage "[\"$v3_parent_signed_tx\",\"$v3_child_signed_tx\"]"
+
+{
+  "package_msg": "success",
+  "tx-results": {
+    "9cd114bad3901ba00a5b95f97db608288f7e74714d1ab52a278e0d99be365bf6": {
+      "txid": "220a74476e02cb171783be8f94d139d1073bb7471881ae63385deb9e75f66702",
+      "vsize": 141,
+      "fees": {
+        "base": 0.00100000,
+        "effective-feerate": 0.00709219,
+        "effective-includes": [
+          "9cd114bad3901ba00a5b95f97db608288f7e74714d1ab52a278e0d99be365bf6"
+        ]
+      }
+    },
+    "55e62ba997f71d4aacdeee8a8a4744d49608d0afe85b921a559de62b539f84fe": {
+      "txid": "83e16a39113389111e8cf68d71718cad3b90169dca04d4e36be898be5fce4f31",
+      "vsize": 141,
+      "fees": {
+        "base": 0.00100000,
+        "effective-feerate": 0.00709219,
+        "effective-includes": [
+          "55e62ba997f71d4aacdeee8a8a4744d49608d0afe85b921a559de62b539f84fe"
+        ]
+      }
+    }
+  },
+  "replaced-transactions": [
+  ]
+}
+➜  rctesting bcli createrawtransaction "[{\"txid\": \"$v3_parent_txid\", \"vout\": 1}]" "[{\"$address_b\": 1},{\"$address_a\": 47.997}]"
+
+02000000010267f6759eeb5d3863ae811847b73b07d139d1948fbe831717cb026e47740a220100000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04209c151e01000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd700000000
+➜  rctesting high_fee_child_signed_tx_result=$(bcli signrawtransactionwithwallet 03000000010267f6759eeb5d3863ae811847b73b07d139d1948fbe831717cb026e47740a220100000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04209c151e01000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd700000000 "[{\"txid\":\"$v3_parent_txid\", \"vout\": 1, \"scriptPubKey\": \"$v3_parent_spk\", \"witnessScript\": \"$v3_parent_witness_script\", \"amount\": 48.999}]")
+
+➜  rctesting high_fee_child_signed_tx=$(echo $high_fee_child_signed_tx_result | jq -r .hex)
+
+➜  rctesting echo "$high_fee_child_signed_tx_result"
+
+{
+  "hex": "030000000001010267f6759eeb5d3863ae811847b73b07d139d1948fbe831717cb026e47740a220100000000fdffffff0200e1f50500000000160014fc7705f21f583a3fcfbb61ec203de7a999acfe04209c151e01000000160014b0e9d9d52a4fdd87a8e0cadc2c95d9fb37a1efd702473044022053e8967f784ca359434e69450d76738f5c386b5f56be758e3ebee285376dd5a502201bf639aa68f310af4402bcf28f840696f50736f2cc7a59c32c0bf02be2c9102f012102e6374c796c14e20c7a8315d74b42f721979a49df27ed87f30b9f4b015001bd1c00000000",
+  "complete": true
+}
+➜  rctesting bcli submitpackage "[\"$v3_parent_signed_tx\",\"$high_fee_child_signed_tx\"]"
+
+{
+  "package_msg": "success",
+  "tx-results": {
+    "9cd114bad3901ba00a5b95f97db608288f7e74714d1ab52a278e0d99be365bf6": {
+      "txid": "220a74476e02cb171783be8f94d139d1073bb7471881ae63385deb9e75f66702",
+      "vsize": 141,
+      "fees": {
+        "base": 0.00100000
+      }
+    },
+    "3aa7f91aa486d2e242c845f888fd41eba4832503cf87e35158e53d0d3f298d5f": {
+      "txid": "2703e69ce7b0fe1bf19247c35fd91c6d683770a0b5715d4e065b960f7d6394d5",
+      "vsize": 141,
+      "fees": {
+        "base": 0.00200000,
+        "effective-feerate": 0.01418439,
+        "effective-includes": [
+          "3aa7f91aa486d2e242c845f888fd41eba4832503cf87e35158e53d0d3f298d5f"
+        ]
+      }
+    }
+  },
+  "replaced-transactions": [
+    "83e16a39113389111e8cf68d71718cad3b90169dca04d4e36be898be5fce4f31"
+  ]
+}
+➜  rctesting bcli stop
+
+Bitcoin Core stopping
+➜  rctesting
